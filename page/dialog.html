@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dialog</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10" />
+<link type="text/css" rel="stylesheet" href="../css/animate.min.css"/> 
+<link type="text/css" rel="stylesheet" href="../css/commom.css"/>
+<link type="text/css" rel="stylesheet" href="../css/swiper.min.css"/>
+<style type="text/css">
+.dialog-swiper{ position:fixed; width:100%; height:100%; top:0; left:0; z-index:100;}
+.bpic{width:100px; height:100px; border-radius:50%; line-height:100px; text-align:center; display:block; margin:0 auto;   position:relative; z-index:200;}
+.dialog-note{ width:85%;}
+.pop-dark .dialog-note{ height:50%; border-radius:10px;}
+.dialog-silde{ border-radius:10px 10px 0 0; padding:25px 0; position:relative;}
+.swiper-container .bd-content{ background:#fff;border-radius:0 0 10px 10px;}
+.swiper-container .bd-title{ background: #f5f5f5; color: #f7a800; margin-bottom: 10px; margin-top:25px; font-size: 20px; display: inline-block; line-height: 30px; border-radius: 20px; padding: 5px 25px;}
+.swiper-container .flexitem{ color:#00d496; line-height:52px;}
+.swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{ bottom:5%;}
+@-webkit-keyframes ball-scale-multiple {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0; }
+
+  5% {
+    opacity: 0.4; }
+
+  100% {
+    -webkit-transform: scale(1.35);
+            transform: scale(1.35);
+    opacity: 0; } }
+
+@keyframes ball-scale-multiple {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0; }
+  5% {
+    opacity: 0.4; }
+
+  100% {
+    -webkit-transform: scale(1.35);
+            transform: scale(1.35);
+    opacity: 0; } }
+.ball-scale-multiple {}
+  .ball-scale-multiple > div:nth-child(2) {
+    -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s; }
+  .ball-scale-multiple > div:nth-child(3) {
+    -webkit-animation-delay: 0.4s;
+            animation-delay: 0.4s; }
+  .ball-scale-multiple > div {
+    background-color: #fff;
+    border-radius: 100%;
+    margin: 2px;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+	margin:-50px 0 0 -50px;
+    opacity: 1;
+    width: 100px;
+    height: 100px;
+	-webkit-animation: ball-scale-multiple 1s linear infinite;
+            animation: ball-scale-multiple 1s linear infinite; 
+}
+.pop-dialog{ visibility:hidden;}
+#p2.pop-dialog{ color:#fff;}
+#p2 .dialog-silde{ top:-50px; padding:0; margin-bottom:-30px;}
+.newfound{ position:relative; padding:0 0 50px 0;}
+.newfound:before{content:"发现新版本";font-size:40px; display:block;text-shadow:0 0 3px rgba(0,0,0,0.2); font-weight:bold; margin-bottom:10px;}
+.newfound span{ background:rgba(255,255,255,0.9); border-radius:12px;color:#09c49e; font-size:14px; line-height:14px; padding:5px 10px;}
+#p2.pop-dialog .bd-txt{ text-align:left; padding:60px 25px 25px 25px; line-height:30px;}
+#p2.pop-dialog .flexitem{ padding:0 10px;}
+.line-item-text{ text-align:left;}
+</style>
+</head>
+<body>
+    <header class="header">
+      <a class="fls icon-back" href="index.html"></a>
+      <div class="flexitem">对话框</div>    
+    </header>     
+<div class="container" style="padding:20px 40px;"> 
+    <button class="rui-btn bg-blue btn-block" id="btn6">分享弹窗</button>
+    <button class="rui-btn bg-blue btn-block" id="btn7">多屏弹窗</button>
+    <button class="rui-btn bg-blue btn-block" id="btn10">多屏大色块弹窗</button>
+    <button class="rui-btn bg-blue btn-block" id="btn11">选择消息框</button>
+    <button class="rui-btn bg-blue btn-block" id="btn8">弹窗表单</button>   
+    <button class="rui-btn bg-blue btn-block" id="btn1">toast已完成</button>
+    <button class="rui-btn bg-blue btn-block" id="btn2">toast加载</button>
+    <button class="rui-btn bg-blue btn-block" id="btn3">系统默认警告消息框</button>
+    <button class="rui-btn bg-blue btn-block" id="btn4">系统默认选择消息框</button>
+    <button class="rui-btn bg-blue btn-block" id="btn5">系统默认带输入的弹框</button>  
+
+ <section class="dialog-wrap" id="d2">
+    <div class="pop-wrap"></div>
+    <div class="dialog">
+        <div class="dialog-bd">
+            <h4 class="bd-title">弹窗标题</h4>
+            <p class="bd-txt">你确定要升级系统吗?</p>
+        </div>
+        <footer class="dialog-ft flex-box">
+            <span class="flexitem msure">取消</span>
+            <span class="flexitem dt-dot msure">确定</span>
+        </footer>
+    </div>
+</section>
+<section class="dialog-wrap" id="d11">
+    <div class="pop-wrap"></div>
+    <div class="dialog dialog-style">
+        <div class="dialog-bd dgreen">
+            <h4 class="bd-title">弹窗标题</h4>
+            <p class="bd-txt">你确定要升级系统吗?</p>           
+        </div>
+        <div class="flex-box flexicon">
+            <div class="flexitem">
+                <i class="icon-weixin1"></i>
+                微信好友
+            </div>
+            <div class="flexitem">
+                <i class="icon-qq"></i>
+                QQ好友
+            </div>
+            <div class="flexitem">
+                <i class="icon-weibo"></i>
+                微博好友
+            </div>
+        </div>
+        <div style="padding:0 20px 20px 20px;"><button class="rui-btn bg-green btn-block">知道了</button> </div> 
+    </div>
+    </div>
+</section>
+
+
+<section class="toast-wrap toast-fn">
+    <div class="toast">
+        <i class="icon-check1"></i>
+        <div class="toast-con">已完成</div>
+    </div>
+</section>
+
+
+<section class="toast-wrap toast-jz">
+    <div class="toast">
+        <div class="tloading">
+            <div class="tloading-leaf tloading-leaf-0"></div>
+            <div class="tloading-leaf tloading-leaf-1"></div>
+            <div class="tloading-leaf tloading-leaf-2"></div>
+            <div class="tloading-leaf tloading-leaf-3"></div>
+            <div class="tloading-leaf tloading-leaf-4"></div>
+            <div class="tloading-leaf tloading-leaf-5"></div>
+            <div class="tloading-leaf tloading-leaf-6"></div>
+            <div class="tloading-leaf tloading-leaf-7"></div>
+            <div class="tloading-leaf tloading-leaf-8"></div>
+            <div class="tloading-leaf tloading-leaf-9"></div>
+            <div class="tloading-leaf tloading-leaf-10"></div>
+            <div class="tloading-leaf tloading-leaf-11"></div>
+        </div>
+        <div class="tloading-con">数据加载中</div>
+    </div>
+</section>
+
+ <section class="dialog-wrap" id="d1">
+    <div class="pop-wrap"></div>
+    <div class="dialog dialog-in">
+        <div class="dialog-bd">
+            <h4 class="bd-title">弹窗标题</h4>
+            <p class="bd-txt">你确定要升级系统吗?</p>
+            
+        </div>
+        <footer class="dialog-ft flex-box">
+            <span class="flexitem msure">确定</span>
+        </footer>
+    </div>
+    </div>
+</section>
+
+<section class="dialog-wrap" id="d3">
+    <div class="pop-wrap"></div>
+    <div class="dialog dialog-in">
+        <div class="dialog-bd">
+            <h4 class="bd-title">弹窗标题</h4>
+            <p class="bd-txt">你确定要升级系统吗?</p>           
+        </div>
+        <div class="bd-input">
+            <input type="text" placeholder="输入内容" autofocus>
+        </div>
+        <footer class="dialog-ft flex-box">
+            <span class="flexitem msure">取消</span>
+            <span class="flexitem dt-dot msure">确定</span>
+        </footer>
+    </div>
+    </div>
+</section>
+<section class="dialog-wrap" id="d4">
+    <div class="pop-wrap"></div>
+    <div class="dialog dialog-style">
+        <div class="dialog-bd dgreen">
+            <h4 class="bd-title">弹窗标题</h4>
+            <p class="bd-txt">你确定要升级系统吗?</p>           
+        </div>
+        <div class="flex-box flexicon">
+            <div class="flexitem">
+                <i class="icon-weixin1"></i>
+                微信好友
+            </div>
+            <div class="flexitem">
+                <i class="icon-qq"></i>
+                QQ好友
+            </div>
+            <div class="flexitem">
+                <i class="icon-weibo"></i>
+                微博好友
+            </div>
+        </div>
+        <footer class="dialog-ft flex-box">
+             <span class="flexitem msure">取消</span>
+        </footer>
+    </div>
+    </div>
+</section>
+<section class="pop-dialog" id="p1">
+<div class="pop-wrap"></div>
+	<div class="dialog-swiper">
+        <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+            	<div class="dialog-note">
+                <div class="dgreen dialog-silde">
+                	<div class="ball-scale-multiple">
+                    	<div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <img src="../images/1.jpg" alt="" class="bpic">  
+                  </div>                    
+                <div class="bd-content">
+                 <h4 class="bd-title">Flexbox非常的棒</h4> 
+                <div class="bd-txt">
+                    <p>掘金是一个高质量的技术社区</p>
+                    <p>从 ECMAScript 6 到 Vue.js</p>
+                    <p>让你不错过前端开发的每一个技术干货</p>
+                </div>               
+                <footer class="dialog-ft flex-box">
+                    <span class="flexitem msure">我知道了</span>
+                </footer>
+                </div>
+            </div>
+            </div>
+            <div class="swiper-slide">
+            	<div class="dialog-note">
+                <div class="dred dialog-silde">
+                	<div class="ball-scale-multiple">
+                    	<div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <img src="../images/2.jpg" alt="" class="bpic">  
+                  </div>                    
+                <div class="bd-content">
+                 <h4 class="bd-title">Flexbox非常的棒</h4> 
+                <div class="bd-txt">
+                    <p>掘金是一个高质量的技术社区</p>
+                    <p>从 ECMAScript 6 到 Vue.js</p>
+                    <p>让你不错过前端开发的每一个技术干货</p>
+                </div>               
+                <footer class="dialog-ft flex-box">
+                    <span class="flexitem msure">我知道了</span>
+                </footer>
+                </div>
+            </div>
+            </div>
+            <div class="swiper-slide">
+            	<div class="dialog-note">
+                <div class="dblue dialog-silde">
+                	<div class="ball-scale-multiple">
+                    	<div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <img src="../images/3.jpg" alt="" class="bpic">  
+                  </div>                    
+                <div class="bd-content">
+                 <h4 class="bd-title">Flexbox非常的棒</h4> 
+                <div class="bd-txt">
+                    <p>掘金是一个高质量的技术社区</p>
+                    <p>从 ECMAScript 6 到 Vue.js</p>
+                    <p>让你不错过前端开发的每一个技术干货</p>
+                </div>               
+                <footer class="dialog-ft flex-box">
+                    <span class="flexitem msure">我知道了</span>
+                </footer>
+                </div>
+            </div>
+            </div>
+            <div class="swiper-slide">
+            	<div class="dialog-note">
+                <div class="dyellow dialog-silde">
+                	<div class="ball-scale-multiple">
+                    	<div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <img src="../images/4.jpg" alt="" class="bpic">  
+                  </div>                    
+                <div class="bd-content">
+                 <h4 class="bd-title">Flexbox非常的棒</h4> 
+                <div class="bd-txt">
+                    <p>掘金是一个高质量的技术社区</p>
+                    <p>从 ECMAScript 6 到 Vue.js</p>
+                    <p>让你不错过前端开发的每一个技术干货</p>
+                </div>               
+                <footer class="dialog-ft flex-box">
+                    <span class="flexitem msure">我知道了</span>
+                </footer>
+                </div>
+            </div>
+            </div>
+            <div class="swiper-slide">
+            	<div class="dialog-note">
+                <div class="ddark dialog-silde">
+                	<div class="ball-scale-multiple">
+                    	<div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <img src="../images/6.jpg" alt="" class="bpic">  
+                  </div>                    
+                <div class="bd-content">
+                 <h4 class="bd-title">Flexbox非常的棒</h4> 
+                <div class="bd-txt">
+                    <p>掘金是一个高质量的技术社区</p>
+                    <p>从 ECMAScript 6 到 Vue.js</p>
+                    <p>让你不错过前端开发的每一个技术干货</p>
+                </div>               
+                <footer class="dialog-ft flex-box">
+                    <span class="flexitem msure">我知道了</span>
+                </footer>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    </div>
+</section>
+<section class="pop-dialog pop-dark" id="p2">
+<div class="pop-wrap"></div>
+	<div class="dialog-swiper">
+        <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+            	<div class="dialog-note dgreen">
+                <div class="dialog-silde">
+                	<div class="ball-scale-multiple">
+                    	<div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <img src="../images/1.jpg" alt="" class="bpic">  
+                  </div>
+                  <div class="newfound"><span>v6.18.89.2</span></div>
+             <footer class="flex-box">
+                <span class="flexitem"><button class="rui-btn bg-white btn-outlined btn-block">立即升级 </button></span>
+                <span class="flexitem"><button class="rui-btn bg-white btn-outlined btn-block">下次再说 </button></span>
+            </footer>  
+                  
+            </div>
+            </div>
+            <div class="swiper-slide">
+            	<div class="dialog-note dred">
+                <div class="dialog-silde">
+                	<div class="ball-scale-multiple">
+                    	<div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <img src="../images/2.jpg" alt="" class="bpic">  
+                  </div>
+                  <div class="newfound"><span>v6.18.89.2</span></div>
+             <footer class="flex-box">
+                <span class="flexitem"><button class="rui-btn bg-white btn-outlined btn-block">立即升级 </button></span>
+                <span class="flexitem"><button class="rui-btn bg-white btn-outlined btn-block">下次再说 </button></span>
+            </footer>  
+                  
+            </div>
+            </div>
+            <div class="swiper-slide">
+            	<div class="dialog-note dblue">
+                <div class="dialog-silde">
+                	<div class="ball-scale-multiple">
+                    	<div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <img src="../images/3.jpg" alt="" class="bpic">  
+                  </div>
+                  <div class="newfound"><span>v6.18.89.2</span></div>
+             <footer class="flex-box">
+                <span class="flexitem"><button class="rui-btn bg-white btn-outlined btn-block">立即升级 </button></span>
+                <span class="flexitem"><button class="rui-btn bg-white btn-outlined btn-block">下次再说 </button></span>
+            </footer>  
+                  
+            </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    </div>
+</section>
+<section class="dialog-wrap" id="d6">
+    <div class="pop-wrap"></div>
+    <div class="dialog dialog-style">
+        <i class="icon-roundclose"></i>
+        <div class="dialog-bd dgreen">
+            <h4 class="bd-title">弹窗标题</h4>
+            <p class="bd-txt">你确定要升级系统吗?</p>           
+        </div>
+        <div class="item-form" style="overflow: hidden">
+    	<div class="line-item">
+        	<div class="line-item-text"><label class="item-label">qq</label></div>
+            <div class="line-item-left">
+            <input class="item-input" type="number" pattern="[0-9]*" placeholder="请输入qq号"/>
+            </div>
+        </div>
+    	<div class="line-item item-code">
+        	<div class="line-item-text"><label class="item-label">验证码</label></div>
+            <div class="line-item-left">
+            <input class="item-input" type="number" pattern="[0-9]*" placeholder="请输入验证码"/>
+            </div>
+            <div class="rxr"><img src="../images/vcode.jpg" alt="" height="47px"></div>
+        </div>
+    	<div class="line-item">
+        	<div class="line-item-text"><label class="item-label">银行卡</label></div>
+            <div class="line-item-left">
+            <input class="item-input" type="number" pattern="[0-9]*" placeholder="请输入银行卡号"/>
+            </div>
+        </div>
+    	<div class="line-item">
+        	<div class="line-item-text"><label class="item-label">身份证号</label></div>
+            <div class="line-item-left">
+            <input class="item-input" type="number" pattern="[0-9]*" placeholder="请输入身份证"/>
+            </div>
+        </div>
+    	<div class="line-item">
+        	<div class="line-item-text"><label class="item-label">电话</label></div>
+            <div class="line-item-left">
+            <input class="item-input" type="number" pattern="[0-9]*" placeholder="请输入联系电话"/>
+            </div>
+        </div>
+         </div>
+        <footer class="dialog-ft flex-box">
+             <span class="flexitem msure">确定</span>
+        </footer>
+    </div>
+    </div>
+</section>
+<section class="dialog-wrap" id="d7">
+    <div class="pop-wrap"></div>
+    <div class="pop-content">
+        <div class="flex-box flexicon">
+            <div class="flexitem">
+                <i class="icon-weixin1"></i>
+                微信
+            </div>
+            <div class="flexitem">
+                <i class="icon-qq"></i>
+                QQ好友
+            </div>
+            <div class="flexitem">
+                <i class="icon-weibo"></i>
+                微博
+            </div>
+        </div>
+    </div>
+</section>
+<div class="content pd">
+   css规范
+
+和谐而论，编写组件前请认真研读此规范，然后再开始编码！
+
+组织规范
+
+FrozenUI 的模块组织方式分为四个部分：
+
+base（reset + type + animation + icon + mixin + variable）
+
+util（arrowlink + border + grid + layout）
+
+component（UI组件，包括css组件和js插件中使用的）
+
+vip（业务组件）
+
+可以参考下面的规范在此基础上扩展出自己的业务组件。
+
+命名规范
+
+统一使用ui为前缀作为命名空间。
+
+class 名称中只能出现小写字符和破折号（dashe）（不是下划线，也不是驼峰命名法）。破折号应当用于相关 class 的命名（类似于命名空间）（例如.ui-btn 和 .ui-btn-danger）。
+
+避免过度任意的简写。.btn 代表 button，但是 .b 不能表达任何意思。
+
+class 名称应当尽可能短，并且意义明确，不要使用表现形式（presentational）的名称。
+
+基于最近的父 class 或基本（base） class 作为新 class 的前缀。
+
+模块名如果是两个单词组合使用简单连写的方式，如ui-tooltips而不是ui-tool-tips。
+
+.ui-btn-lg.disabled
+
+{命名空间}-{模块}-{属性}.{状态}
+
+.ui-dialog-cnt
+
+{命名空间}-{模块}-{子模块}
+
+描述属性的class应该基于当前的class，层级不超过3级
+
+.ui-form-item ui-form-item-link
+
+{命名空间}-{模块}-{属性}.{状态}
+
+除了常用状态的class，不能直接使用其他不带前缀的class，如
+
+    
+而不使用 
+</div>
+</div> 
+ <script type="text/javascript" src="../js/zepto.min.js" ></script>
+ <script type="text/javascript" src="../js/swiper.min.js"></script>
+ <script type="text/javascript">
+ $(function(){
+     $("#btn1").tap(function(){
+         $(".toast-fn").show();
+         setTimeout(function () {
+			 $('.toast-fn').hide();
+			 }, 1000);
+     })
+     $("#btn2").tap(function(){
+         $(".toast-jz").show();
+         setTimeout(function () {
+			 $('.toast-jz').hide();
+			 }, 3000);
+     })
+     $("#btn3").tap(function(){
+         $("#d1").show();
+         $("#d1 .dialog").addClass("dialog-in");
+     })
+	  $("#btn11").tap(function(){
+         $("#d11").show();
+         $("#d11 .dialog").addClass("dialog-in");
+     })
+     $("#btn4").tap(function(){
+         $("#d2").show();
+         $("#d2 .dialog").addClass("dialog-in");
+     })
+     $("#btn5").tap(function(){
+         $("#d3").show();
+         $("#d3 .dialog").addClass("dialog-in");
+     })
+     $("#btn6").tap(function(){
+         $("#d4").show();
+         $("#d4 .dialog").addClass("dialog-in");
+     })
+      $("#btn7").tap(function(){
+         $("#p1").css("visibility","visible");
+     })
+	  $("#btn10").tap(function(){
+         $("#p2").css("visibility","visible");
+     })
+     $("#btn8").tap(function(){
+         $("#d6").show();
+         $("#d6 .dialog").addClass("dialog-in");
+     })
+     $("#btn9").tap(function(){
+         $("#d7").show();
+         $(".pop-content").addClass("pop-active");
+     })
+     $(".msure,.rui-btn").tap(function(){
+        $(this).closest(".dialog-wrap").hide();
+		$(this).closest(".pop-dialog").css("visibility","hidden");
+     })
+     var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        loop: true
+    });
+ })
+ </script>  
+</body>
+</html>

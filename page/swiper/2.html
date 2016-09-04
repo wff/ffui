@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>swiper</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10" /> 
+<link type="text/css" rel="stylesheet" href="../../css/commom.css"/>
+<link type="text/css" rel="stylesheet" href="../../css/swiper.min.css"/>
+    <style>
+    html, body {
+        position: relative;
+        height: 100%;
+    }
+    body {
+        background: #2e3c54;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color:#fff;
+        margin: 0;
+        padding: 0;
+    }
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{ bottom: 70px;}
+/*滑屏*/
+.swiper-container {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box; padding: 20px 0 100px 0;
+    }
+    
+    .swiper-slide{ border-radius: 10px;}
+    
+.swiper-slide{ box-sizing: border-box; padding-bottom: 126px;}   
+.sildepront{ width: 100%; height: 100%; border-radius: 5px 5px 0 0; position: relative; 
+}
+.silde-cell{ width: 100%; border-radius: 0 0 5px 5px; position: fixed; bottom: 0px; left: 0px;}
+.silde-cell .line-item-left{ text-align: left;}
+.silde1{ 
+  background:-moz-linear-gradient(top,#a8ec6d,#25b34a);
+	background:-o-linear-gradient(top,#a8ec6d,#25b34a);
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#a8ec6d), to(#25b34a));
+  }
+.silde2{ 
+  background:-moz-linear-gradient(top,#6ebfe9,#4c6be5);
+	background:-o-linear-gradient(top,#6ebfe9,#4c6be5);
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#6ebfe9), to(#4c6be5));
+  }
+  .silde3{ 
+  background:-moz-linear-gradient(top,#f6946c,#f8709c);
+	background:-o-linear-gradient(top,#f6946c,#f8709c);
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#f6946c), to(#f8709c));
+  }
+  .silde4{ 
+  background:-moz-linear-gradient(top,#00c8df,#00d398);
+	background:-o-linear-gradient(top,#00c8df,#00d398);
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#00c8df), to(#00d398));
+  }
+  .silde5{ 
+  background:-moz-linear-gradient(top,#4a2750,#651031);
+	background:-o-linear-gradient(top,#4a2750,#651031);
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#4a2750), to(#651031));
+  }
+.sildepront img{ width: 150px; height: 150px; border-radius: 50%; border: 7px solid rgba(255,255,255,0.2); display: block; margin: 0 auto 10px auto;}
+.slidev{
+  position: fixed;
+  z-index: 5000;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+}
+.slidev .rui-btn{ display: block; margin: 10px auto;  padding: 6px 25px;  font-size: 18px; background: none;}
+.slidev .rui-btn:after{ border: 1px solid #fff;}
+    </style>
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="sildepront silde1"> 
+                    <div class="slidev">
+                <img src="../../images/1.jpg" alt="">
+                王阳明
+                <button type="button" class="rui-btn"> 美食达人 </button>
+                </div>
+                </div>
+                <ul class="line-cells line-cells-access silde-cell">
+                <li class="line-item">
+                    <div class="line-item-left">深圳</div>
+                    <div class="line-item-right">广东省</div>
+                </li>
+                <li class="line-item">
+                    <div class="line-item-left">杭州</div>
+                    <div class="line-item-right"><span class="remind-num bg-green">199</span></div>
+                </li>
+                <li class="line-item">
+                    <div class="line-item-left">上海</div>
+                <div class="line-item-right"><span class="remind-num bg-red">199</span></div>
+                </li>
+                </ul>
+                </div>
+            <div class="swiper-slide">
+                <div class="sildepront silde2"> 
+                    <div class="slidev">
+                <img src="../../images/2.jpg" alt="">
+                王阳明
+                <button type="button" class="rui-btn"> 哲学家 </button>
+                </div>
+                </div>
+                <ul class="line-cells line-cells-access silde-cell">
+                <li class="line-item">
+                    <div class="line-item-left">深圳</div>
+                    <div class="line-item-right">广东省</div>
+                </li>
+                <li class="line-item">
+                    <div class="line-item-left">杭州</div>
+                    <div class="line-item-right"><span class="remind-num bg-green">199</span></div>
+                </li>
+                <li class="line-item">
+                    <div class="line-item-left">上海</div>
+                <div class="line-item-right"><span class="remind-num bg-red">199</span></div>
+                </li>
+                </ul>
+                </div>
+                <div class="swiper-slide">
+                <div class="sildepront silde3"> 
+                    <div class="slidev">
+                <img src="../../images/3.jpg" alt="">
+                王阳明
+                <button type="button" class="rui-btn"> 军事家 </button>
+                </div>
+                </div>
+                <ul class="line-cells line-cells-access silde-cell">
+                <li class="line-item">
+                    <div class="line-item-left">深圳</div>
+                    <div class="line-item-right">广东省</div>
+                </li>
+                <li class="line-item">
+                    <div class="line-item-left">杭州</div>
+                    <div class="line-item-right"><span class="remind-num bg-green">199</span></div>
+                </li>
+                <li class="line-item">
+                    <div class="line-item-left">上海</div>
+                <div class="line-item-right"><span class="remind-num bg-red">199</span></div>
+                </li>
+                </ul>
+                </div>
+                <div class="swiper-slide">
+                <div class="sildepront silde4"> 
+                    <div class="slidev">
+                <img src="../../images/4.jpg" alt="">
+                王阳明
+                <button type="button" class="rui-btn"> 文学家 </button>
+                </div>
+                </div>
+                <ul class="line-cells line-cells-access silde-cell">
+                <li class="line-item">
+                    <div class="line-item-left">深圳</div>
+                    <div class="line-item-right">广东省</div>
+                </li>
+                <li class="line-item">
+                    <div class="line-item-left">杭州</div>
+                    <div class="line-item-right"><span class="remind-num bg-green">199</span></div>
+                </li>
+                <li class="line-item">
+                    <div class="line-item-left">上海</div>
+                <div class="line-item-right"><span class="remind-num bg-red">199</span></div>
+                </li>
+                </ul>
+                </div>
+                <div class="swiper-slide">
+                <div class="sildepront silde5"> 
+                    <div class="slidev">
+                <img src="../../images/5.jpg" alt="">
+                王阳明
+                <button type="button" class="rui-btn"> 政治家 </button>
+                </div>
+                </div>
+                <ul class="line-cells line-cells-access silde-cell">
+                <li class="line-item">
+                    <div class="line-item-left">深圳</div>
+                    <div class="line-item-right">广东省</div>
+                </li>
+                <li class="line-item">
+                    <div class="line-item-left">杭州</div>
+                    <div class="line-item-right"><span class="remind-num bg-green">199</span></div>
+                </li>
+                <li class="line-item">
+                    <div class="line-item-left">上海</div>
+                <div class="line-item-right"><span class="remind-num bg-red">199</span></div>
+                </li>
+                </ul>
+                </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <!---->
+    <footer class="footer">
+        <a href="#" class="footeritem icon-home active"><span>首页</span></a>
+        <a href="#" class="footeritem icon-fenlei"><span>全部</span></a>
+        <a href="#" class="footeritem icon-cart"><span>购物车</span></a>
+        <a href="#" class="footeritem icon-people"><span>我的</span></a>      
+    </footer> 
+    <script src="../../js/swiper.min.js"></script>
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+         slidesPerView: 1.2,
+		effect: 'coverflow',
+        centeredSlides: true,
+        paginationClickable: true,
+        spaceBetween: -5,
+        loop: true
+    });
+    </script>
+</body>
+</html>

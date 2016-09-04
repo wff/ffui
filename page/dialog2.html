@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dialog</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10" />
+<link type="text/css" rel="stylesheet" href="../css/animate.min.css"/> 
+<link type="text/css" rel="stylesheet" href="../css/commom.css"/>
+<link type="text/css" rel="stylesheet" href="../css/swiper.min.css"/>
+<style type="text/css">
+.dialog-wrap .swiper-container,.dialog-wrap .swiper-wrapper{z-index:2000;}
+.dialog-wrap .swiper-container{position: fixed; top:0; left:0;z-index:100;}
+.swiper-container .dialog{position: absolute; overflow:hidden; background:none;}
+.swiper-container .dialog-bd img{ width:100px; height:100px; border-radius:50%; line-height:100px; text-align:center; display:block; margin:0 auto;  border:5px solid rgba(255,255,255,0.5);}
+.swiper-container .dialog-bd{ padding:25px 0;}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{bottom:40px;}
+.line-item-text{ text-align:left;}
+.swiper-container .bd-content{ background:#fff;}
+</style>
+</head>
+<body>
+<div class="container" style="padding:20px 40px;"> 
+    <button class="rui-btn bg-blue btn-block" id="btn6">分享弹窗</button>
+    <button class="rui-btn bg-blue btn-block" id="btn7">多屏弹窗</button>
+    <button class="rui-btn bg-blue btn-block" id="btn9">底部弹出</button> 
+    <button class="rui-btn bg-blue btn-block" id="btn8">弹窗表单</button>   
+    <button class="rui-btn bg-blue btn-block" id="btn1">toast已完成</button>
+    <button class="rui-btn bg-blue btn-block" id="btn2">toast加载</button>
+    <button class="rui-btn bg-blue btn-block" id="btn3">警告消息框</button>
+    <button class="rui-btn bg-blue btn-block" id="btn4">选择消息框</button>
+    <button class="rui-btn bg-blue btn-block" id="btn5">带输入的弹框</button>  
+
+ <section class="dialog-wrap" id="d2">
+    <div class="pop-wrap"></div>
+    <div class="dialog">
+        <div class="dialog-bd">
+            <h4 class="bd-title">弹窗标题</h4>
+            <p class="bd-txt">你确定要升级系统吗?</p>
+        </div>
+        <footer class="dialog-ft flex-box">
+            <span class="flexitem msure">取消</span>
+            <span class="flexitem dt-dot msure">确定</span>
+        </footer>
+    </div>
+</section>
+
+
+
+<section class="toast-wrap toast-fn">
+    <div class="toast">
+        <i class="icon-check1"></i>
+        <div class="toast-con">已完成</div>
+    </div>
+</section>
+
+
+<section class="toast-wrap toast-jz">
+    <div class="toast">
+        <div class="tloading">
+            <div class="tloading-leaf tloading-leaf-0"></div>
+            <div class="tloading-leaf tloading-leaf-1"></div>
+            <div class="tloading-leaf tloading-leaf-2"></div>
+            <div class="tloading-leaf tloading-leaf-3"></div>
+            <div class="tloading-leaf tloading-leaf-4"></div>
+            <div class="tloading-leaf tloading-leaf-5"></div>
+            <div class="tloading-leaf tloading-leaf-6"></div>
+            <div class="tloading-leaf tloading-leaf-7"></div>
+            <div class="tloading-leaf tloading-leaf-8"></div>
+            <div class="tloading-leaf tloading-leaf-9"></div>
+            <div class="tloading-leaf tloading-leaf-10"></div>
+            <div class="tloading-leaf tloading-leaf-11"></div>
+        </div>
+        <div class="tloading-con">数据加载中</div>
+    </div>
+</section>
+
+ <section class="dialog-wrap" id="d1">
+    <div class="pop-wrap"></div>
+    <div class="dialog dialog-in">
+        <div class="dialog-bd">
+            <h4 class="bd-title">弹窗标题</h4>
+            <p class="bd-txt">你确定要升级系统吗?</p>
+            
+        </div>
+        <footer class="dialog-ft flex-box">
+            <span class="flexitem msure">确定</span>
+        </footer>
+    </div>
+    </div>
+</section>
+
+<section class="dialog-wrap" id="d3">
+    <div class="pop-wrap"></div>
+    <div class="dialog dialog-in">
+        <div class="dialog-bd">
+            <h4 class="bd-title">弹窗标题</h4>
+            <p class="bd-txt">你确定要升级系统吗?</p>           
+        </div>
+        <div class="bd-input">
+            <input type="text" placeholder="输入内容" autofocus>
+        </div>
+        <footer class="dialog-ft flex-box">
+            <span class="flexitem msure">取消</span>
+            <span class="flexitem dt-dot msure">确定</span>
+        </footer>
+    </div>
+    </div>
+</section>
+<section class="dialog-wrap" id="d4">
+    <div class="pop-wrap"></div>
+    <div class="dialog dgreen dialog-style">
+        <div class="dialog-bd">
+            <h4 class="bd-title">弹窗标题</h4>
+            <p class="bd-txt">你确定要升级系统吗?</p>           
+        </div>
+        <div class="flex-box flexicon">
+            <div class="flexitem">
+                <i class="icon-weixin1"></i>
+            </div>
+            <div class="flexitem">
+                <i class="icon-qq"></i>
+            </div>
+            <div class="flexitem">
+                <i class="icon-weibo"></i>
+            </div>
+        </div>
+        <footer class="dialog-ft flex-box">
+             <span class="flexitem msure">取消</span>
+        </footer>
+    </div>
+    </div>
+</section>
+<section class="dialog-wrap" id="d5">
+    <div class="pop-wrap"></div>
+        <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="dialog dgreen dialog-style">
+                <div class="dialog-bd">
+                   <img src="../images/1.jpg" alt="">        
+                </div>
+                <div class="bd-content">
+                 <h4 class="bd-title">Flexbox非常的棒</h4> 
+                <div class="bd-txt">
+                    <p>掘金是一个高质量的技术社区</p>
+                    <p>从 ECMAScript 6 到 Vue.js</p>
+                    <p>让你不错过前端开发的每一个技术干货</p>
+                </div>               
+                <footer class="dialog-ft flex-box">
+                    <span class="flexitem msure">我知道了</span>
+                </footer>
+                </div>
+            </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="dialog dred dialog-style">
+                <div class="dialog-bd">
+                   <img src="../images/2.jpg" alt="">        
+                </div>
+                <div class="bd-content">
+                 <h4 class="bd-title">Flexbox非常的棒</h4> 
+                <div class="bd-txt">
+                    <p>掘金是一个高质量的技术社区</p>
+                    <p>从 ECMAScript 6 到 Vue.js</p>
+                    <p>让你不错过前端开发的每一个技术干货</p>
+                </div>
+                <footer class="dialog-ft flex-box">
+                    <span class="flexitem msure">我知道了</span>
+                </footer>
+                 </div>
+            </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="dialog dblue dialog-style">
+                <div class="dialog-bd">
+                   <img src="../images/3.jpg" alt="">        
+                </div>
+                <div class="bd-content">
+                 <h4 class="bd-title">Flexbox非常的棒</h4> 
+                <div class="bd-txt">
+                    <p>掘金是一个高质量的技术社区</p>
+                    <p>从 ECMAScript 6 到 Vue.js</p>
+                    <p>让你不错过前端开发的每一个技术干货</p>
+                </div>
+                <footer class="dialog-ft flex-box">
+                    <span class="flexitem msure">我知道了</span>
+                </footer>
+                </div>
+            </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="dialog dyellow dialog-style">
+                <div class="dialog-bd">
+                   <img src="../images/4.jpg" alt="">        
+                </div>
+                <div class="bd-content">
+                 <h4 class="bd-title">Flexbox非常的棒</h4> 
+                <div class="bd-txt">
+                    <p>掘金是一个高质量的技术社区</p>
+                    <p>从 ECMAScript 6 到 Vue.js</p>
+                    <p>让你不错过前端开发的每一个技术干货</p>
+                </div>
+                
+                <footer class="dialog-ft flex-box">
+                    <span class="flexitem msure">我知道了</span>
+                </footer>
+                </div>
+            </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="dialog ddark dialog-style">
+                <div class="dialog-bd">
+                   <img src="../images/6.jpg" alt="">        
+                </div>
+                <div class="bd-content">
+                 <h4 class="bd-title">Flexbox非常的棒</h4> 
+                <div class="bd-txt">
+                    <p>掘金是一个高质量的技术社区</p>
+                    <p>从 ECMAScript 6 到 Vue.js</p>
+                    <p>让你不错过前端开发的每一个技术干货</p>
+                </div>               
+                <footer class="dialog-ft flex-box">
+                    <span class="flexitem msure">我知道了</span>
+                </footer>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    </div>
+</section>
+<section class="dialog-wrap" id="d6">
+    <div class="pop-wrap"></div>
+    <div class="dialog dgreen dialog-style" >
+        <i class="icon-roundclose"></i>
+        <div class="dialog-bd">
+            <h4 class="bd-title">弹窗标题</h4>
+            <p class="bd-txt">你确定要升级系统吗?</p>           
+        </div>
+        <div class="item-form" style="overflow: hidden">
+    	<div class="line-item">
+        	<div class="line-item-text"><label class="item-label">qq</label></div>
+            <div class="line-item-left">
+            <input class="item-input" type="number" pattern="[0-9]*" placeholder="请输入qq号"/>
+            </div>
+        </div>
+    	<div class="line-item item-code">
+        	<div class="line-item-text"><label class="item-label">验证码</label></div>
+            <div class="line-item-left">
+            <input class="item-input" type="number" pattern="[0-9]*" placeholder="请输入验证码"/>
+            </div>
+            <div class="rxr"><img src="../images/vcode.jpg" alt="" height="47px"></div>
+        </div>
+    	<div class="line-item">
+        	<div class="line-item-text"><label class="item-label">银行卡</label></div>
+            <div class="line-item-left">
+            <input class="item-input" type="number" pattern="[0-9]*" placeholder="请输入银行卡号"/>
+            </div>
+        </div>
+    	<div class="line-item">
+        	<div class="line-item-text"><label class="item-label">身份证号</label></div>
+            <div class="line-item-left">
+            <input class="item-input" type="number" pattern="[0-9]*" placeholder="请输入身份证"/>
+            </div>
+        </div>
+    	<div class="line-item">
+        	<div class="line-item-text"><label class="item-label">电话</label></div>
+            <div class="line-item-left">
+            <input class="item-input" type="number" pattern="[0-9]*" placeholder="请输入联系电话"/>
+            </div>
+        </div>
+         </div>
+        <footer class="dialog-ft flex-box">
+             <span class="flexitem msure">确定</span>
+        </footer>
+    </div>
+    </div>
+</section>
+<section class="dialog-wrap" id="d7">
+    <div class="pop-wrap"></div>
+    <div class="pop-content">
+        <div class="flex-box flexicon">
+            <div class="flexitem">
+                <i class="icon-weixin1"></i>
+                微信
+            </div>
+            <div class="flexitem">
+                <i class="icon-qq"></i>
+                QQ好友
+            </div>
+            <div class="flexitem">
+                <i class="icon-weibo"></i>
+                微博
+            </div>
+        </div>
+    </div>
+</section>
+<div class="content pd">
+   css规范
+
+和谐而论，编写组件前请认真研读此规范，然后再开始编码！
+
+组织规范
+
+FrozenUI 的模块组织方式分为四个部分：
+
+base（reset + type + animation + icon + mixin + variable）
+
+util（arrowlink + border + grid + layout）
+
+component（UI组件，包括css组件和js插件中使用的）
+
+vip（业务组件）
+
+可以参考下面的规范在此基础上扩展出自己的业务组件。
+
+命名规范
+
+统一使用ui为前缀作为命名空间。
+
+class 名称中只能出现小写字符和破折号（dashe）（不是下划线，也不是驼峰命名法）。破折号应当用于相关 class 的命名（类似于命名空间）（例如.ui-btn 和 .ui-btn-danger）。
+
+避免过度任意的简写。.btn 代表 button，但是 .b 不能表达任何意思。
+
+class 名称应当尽可能短，并且意义明确，不要使用表现形式（presentational）的名称。
+
+基于最近的父 class 或基本（base） class 作为新 class 的前缀。
+
+模块名如果是两个单词组合使用简单连写的方式，如ui-tooltips而不是ui-tool-tips。
+
+.ui-btn-lg.disabled
+
+{命名空间}-{模块}-{属性}.{状态}
+
+.ui-dialog-cnt
+
+{命名空间}-{模块}-{子模块}
+
+描述属性的class应该基于当前的class，层级不超过3级
+
+.ui-form-item ui-form-item-link
+
+{命名空间}-{模块}-{属性}.{状态}
+
+除了常用状态的class，不能直接使用其他不带前缀的class，如
+
+    
+而不使用 
+</div>
+</div> 
+ <script type="text/javascript" src="../js/zepto.min.js" ></script>
+ <script type="text/javascript" src="../js/swiper.min.js"></script>
+ <script type="text/javascript">
+ $(function(){
+     $("#btn1").tap(function(){
+         $(".toast-fn").show();
+         setTimeout(function () {
+			 $('.toast-fn').hide();
+			 }, 1000);
+     })
+     $("#btn2").tap(function(){
+         $(".toast-jz").show();
+         setTimeout(function () {
+			 $('.toast-jz').hide();
+			 }, 3000);
+     })
+     $("#btn3").tap(function(){
+         $("#d1").show();
+         $("#d1 .dialog").addClass("dialog-in");
+     })
+     $("#btn4").tap(function(){
+         $("#d2").show();
+         $("#d2 .dialog").addClass("dialog-in");
+     })
+     $("#btn5").tap(function(){
+         $("#d3").show();
+         $("#d3 .dialog").addClass("dialog-in");
+     })
+     $("#btn6").tap(function(){
+         $("#d4").show();
+         $("#d4 .dialog").addClass("dialog-in");
+     })
+      $("#btn7").tap(function(){
+         $("#d5").show();
+         $("#d5 .dialog").addClass("dialog-in");
+     })
+     $("#btn8").tap(function(){
+         $("#d6").show();
+         $("#d6 .dialog").addClass("dialog-in");
+     })
+     $("#btn9").tap(function(){
+         $("#d7").show();
+         $(".pop-content").addClass("pop-active");
+     })
+     $(".msure").tap(function(){
+        $(this).closest(".dialog-wrap").hide();
+     })
+     var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        loop: true
+    });
+ })
+ </script>  
+</body>
+</html>

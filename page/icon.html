@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>icon图标</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10" /> 
+<link type="text/css" rel="stylesheet" href="../css/commom.css"/>
+<link type="text/css" rel="stylesheet" href="../css/swiper.min.css"/>
+<style>
+body{ background:#343749;}
+.icon_lists li{ width:25%; float:left; text-align:center;}
+.icon_lists li span{ display:block; width:56px; height:56px; line-height:56px; border-radius:50%; margin:10px auto; box-shadow:0 2px 2px rgba(0,0,0,0.2);}
+[class^="icon-"]:before,
+[class*=" icon-"]:before{ color:#fff; font-size:32px; line-height:56px; text-shadow:0 2px 2px rgba(0,0,0,0.1);
+}
+.icon_lists li span{
+ background:-moz-linear-gradient(top,#feaf60,#fd7716);
+	background:-o-linear-gradient(top,#feaf60,#fd7716);
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#feaf60), to(#fd7716));}
+.icon_lists li:nth-child(2n) span{
+ background:-moz-linear-gradient(top,#ff5b3d,#ff2c65);
+	background:-o-linear-gradient(top,#ff5b3d,#ff2c65);
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#ff5b3d), to(#ff2c65));
+}
+.icon_lists li:nth-child(3n) span{
+ background:-moz-linear-gradient(top,#3eabda,#308ee3);
+	background:-o-linear-gradient(top,#3eabda,#308ee3);
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#3eabda), to(#308ee3));
+}
+.icon_lists li:nth-child(4n) span{
+ background:-moz-linear-gradient(top,#9048fe,#6b46fa);
+	background:-o-linear-gradient(top,#9048fe,#6b46fa);
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#9048fe), to(#6b46fa));
+}
+.icon_lists li:nth-child(5n) span{
+ background:-moz-linear-gradient(top,#43c5d6,#32b8d4);
+	background:-o-linear-gradient(top,#43c5d6,#32b8d4);
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#43c5d6), to(#32b8d4));
+}
+.icon_lists li:nth-child(6n) span{
+ background:-moz-linear-gradient(top,#ff7a54,#fa5448);
+	background:-o-linear-gradient(top,#ff7a54,#fa5448);
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#ff7a54), to(#fa5448));
+}
+.icon_lists li:nth-child(7n) span{
+ background:-moz-linear-gradient(top,#ff4194,#f90c61);
+	background:-o-linear-gradient(top,#ff4194,#f90c61);
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#ff4194), to(#f90c61));
+}
+.icon_lists li:nth-child(8n) span{
+ background:-moz-linear-gradient(top,#a4e43e,#6ed328);
+	background:-o-linear-gradient(top,#a4e43e,#6ed328);
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#a4e43e), to(#6ed328));
+}
+.icon_lists li:nth-child(9n) span{
+ background:-moz-linear-gradient(top,#a259cc,#7d4cc6);
+	background:-o-linear-gradient(top,#a259cc,#7d4cc6);
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#a259cc), to(#7d4cc6));
+}
+.icon_lists li:nth-child(10n) span{
+ background:-moz-linear-gradient(top,#3eacda,#308fe1);
+	background:-o-linear-gradient(top,#3eacda,#308fe1);
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#3eacda), to(#308fe1));
+}
+.icon_lists li:nth-child(11n) span{
+ background:-moz-linear-gradient(top,#f6dd80,#f8c44e);
+	background:-o-linear-gradient(top,#f6dd80,#f8c44e);
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#f6dd80), to(#f8c44e));
+}
+.icon_lists li:nth-child(12n) span{
+ background:-moz-linear-gradient(top,#965af8,#6b3de6);
+	background:-o-linear-gradient(top,#965af8,#6b3de6);
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#965af8), to(#6b3de6));
+}
+.icon_lists li:nth-child(13n) span{
+ background:-moz-linear-gradient(top,#ff6e99,#fe408a);
+	background:-o-linear-gradient(top,#ff6e99,#fe408a);
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#ff6e99), to(#fe408a));
+}
+.icon_lists li:nth-child(14n) span{
+ background:-moz-linear-gradient(top,#c6ed38,#a8cc08);
+	background:-o-linear-gradient(top,#c6ed38,#a8cc08);
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#c6ed38), to(#a8cc08));
+}
+    .swiper-container {
+        width: 100%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+		top:50%; left:50%; position:fixed; 
+		-webkit-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+.swiper-pagination{ left:50%;-webkit-transform: translateX(-50%);transform: translateX(-50%); bottom:6%;}
+.swiper-pagination-bullet{ margin:0 5px;}	
+</style>
+</head>
+<body>
+    <div class="container">
+      <div class="swiper-container">
+      <ul class="icon_lists swiper-wrapper">
+                <li class="swiper-slide"><span class="icon-weixin"></span></li>
+                <li class="swiper-slide"><span class="icon-weixin1"></span></li>
+                <li class="swiper-slide"><span class="icon-shezhi"></span></li>
+                <li class="swiper-slide"><span class="icon-appreciate"></span></li>
+                <li class="swiper-slide"><span class="icon-check"></span></li>
+                <li class="swiper-slide"><span class="icon-close"></span></li>
+                <li class="swiper-slide"><span class="icon-favorfill"></span></li>
+                <li class="swiper-slide"><span class="icon-favor"></span></li>
+                <li class="swiper-slide"><span class="icon-roundcheckfill"></span></li>
+                <li class="swiper-slide"><span class="icon-roundcheck"></span></li>
+                <li class="swiper-slide"><span class="icon-roundclosefill"></span></li>
+                <li class="swiper-slide"><span class="icon-roundclose"></span></li>
+                <li class="swiper-slide"><span class="icon-search"></span></li>
+                <li class="swiper-slide"><span class="icon-timefill"></span></li>
+                <li class="swiper-slide"><span class="icon-time"></span></li>
+                <li class="swiper-slide"><span class="icon-unfold"></span></li>
+                
+
+                <li class="swiper-slide"><span class="icon-warnfill"></span></li>
+                <li class="swiper-slide"><span class="icon-warn"></span></li>
+                <li class="swiper-slide"><span class="icon-camerafill"></span></li>
+                <li class="swiper-slide"><span class="icon-camera"></span></li>
+                <li class="swiper-slide"><span class="icon-commentfill"></span></li>
+                <li class="swiper-slide"><span class="icon-comment"></span></li>
+                <li class="swiper-slide"><span class="icon-likefill"></span></li>
+                <li class="swiper-slide"><span class="icon-like"></span></li>
+                <li class="swiper-slide"><span class="icon-notificationfill"></span></li>
+                <li class="swiper-slide"><span class="icon-notification"></span></li>
+                <li class="swiper-slide"><span class="icon-deliver"></span></li>
+                <li class="swiper-slide"><span class="icon-pay"></span></li>
+                <li class="swiper-slide"><span class="icon-send"></span></li>
+                <li class="swiper-slide"><span class="icon-shop"></span></li>
+                <li class="swiper-slide"><span class="icon-ticket"></span></li>
+                <li class="swiper-slide"><span class="icon-back"></span></li>
+                <li class="swiper-slide"><span class="icon-more"></span></li>
+                <li class="swiper-slide"><span class="icon-myfill"></span></li>
+                <li class="swiper-slide"><span class="icon-my"></span></li>
+                <li class="swiper-slide"><span class="icon-scan"></span></li>
+                <li class="swiper-slide"><span class="icon-questionfill"></span></li>
+                <li class="swiper-slide"><span class="icon-question"></span></li>
+                <li class="swiper-slide"><span class="icon-top"></span></li>
+                <li class="swiper-slide"><span class="icon-right"></span></li>
+                <li class="swiper-slide"><span class="icon-moreandroid"></span></li>
+                <li class="swiper-slide"><span class="icon-deletefill"></span></li>
+                <li class="swiper-slide"><span class="icon-delete"></span></li>
+                <li class="swiper-slide"><span class="icon-refund"></span></li>
+                <li class="swiper-slide"><span class="icon-cart"></span></li>
+                <li class="swiper-slide"><span class="icon-home"></span></li>
+                <li class="swiper-slide"><span class="icon-cartfill"></span></li>
+                <li class="swiper-slide"><span class="icon-homefill"></span></li>
+                <li class="swiper-slide"><span class="icon-friend"></span></li>
+                <li class="swiper-slide"><span class="icon-squarecheckfill"></span></li>
+                <li class="swiper-slide"><span class="icon-square"></span></li>
+                <li class="swiper-slide"><span class="icon-round"></span></li>
+                <li class="swiper-slide"><span class="icon-add"></span></li>
+                <li class="swiper-slide"><span class="icon-fold"></span></li>
+                <li class="swiper-slide"><span class="icon-appreciatefill"></span></li>
+                <li class="swiper-slide"><span class="icon-infofill"></span></li>
+                <li class="swiper-slide"><span class="icon-info"></span></li>
+                <li class="swiper-slide"><span class="icon-forwardfill"></span></li>
+                <li class="swiper-slide"><span class="icon-forward"></span></li>
+                <li class="swiper-slide"><span class="icon-rechargefill"></span></li>
+                <li class="swiper-slide"><span class="icon-recharge"></span></li>
+                <li class="swiper-slide"><span class="icon-fenxiang"></span></li>
+                <li class="swiper-slide"><span class="icon-voice"></span></li>
+                <li class="swiper-slide"><span class="icon-voicefill"></span></li>
+                <li class="swiper-slide"><span class="icon-service"></span></li>
+                <li class="swiper-slide"><span class="icon-sort"></span></li>
+                <li class="swiper-slide"><span class="icon-mobile"></span></li>
+                <li class="swiper-slide"><span class="icon-mobilefill"></span></li>
+                <li class="swiper-slide"><span class="icon-upstagefill"></span></li>
+                <li class="swiper-slide"><span class="icon-upstage"></span></li>
+                <li class="swiper-slide"><span class="icon-friendfill"></span></li>
+                <li class="swiper-slide"><span class="icon-xinyongqiahuankuan"></span></li>
+                <li class="swiper-slide"><span class="icon-shoujichongzhi"></span></li>
+                <li class="swiper-slide"><span class="icon-gupiao"></span></li>
+                <li class="swiper-slide"><span class="icon-youxichongzhi"></span></li>
+                <li class="swiper-slide"><span class="icon-shoukuan"></span></li>
+                <li class="swiper-slide"><span class="icon-jipiao"></span></li>
+                <li class="swiper-slide"><span class="icon-kuaidi"></span></li>
+                <li class="swiper-slide"><span class="icon-dache"></span></li>
+                <li class="swiper-slide"><span class="icon-shoujitongxunlu"></span></li>
+                <li class="swiper-slide"><span class="icon-check1"></span></li>
+                <li class="swiper-slide"><span class="icon-markfill"></span></li>
+                <li class="swiper-slide"><span class="icon-mark"></span></li>
+                <li class="swiper-slide"><span class="icon-presentfill"></span></li>
+                <li class="swiper-slide"><span class="icon-album"></span></li>
+                <li class="swiper-slide"><span class="icon-peoplefill"></span></li>
+                <li class="swiper-slide"><span class="icon-people"></span></li>
+                <li class="swiper-slide"><span class="icon-jia"></span></li>
+                <li class="swiper-slide"><span class="icon-jian"></span></li>
+                <li class="swiper-slide"><span class="icon-attentionfill"></span></li>
+                <li class="swiper-slide"><span class="icon-read"></span></li>
+                <li class="swiper-slide"><span class="icon-calendar"></span></li>
+                <li class="swiper-slide"><span class="icon-cut"></span></li>
+                <li class="swiper-slide"><span class="icon-31sousuo"></span></li>
+                <li class="swiper-slide"><span class="icon-backwardfill"></span></li>
+                <li class="swiper-slide"><span class="icon-forwardfill1"></span></li>
+                <li class="swiper-slide"><span class="icon-playfill"></span></li>
+                <li class="swiper-slide"><span class="icon-tagfill"></span></li>
+                <li class="swiper-slide"><span class="icon-tag"></span></li>
+                <li class="swiper-slide"><span class="icon-group"></span></li>
+                <li class="swiper-slide"><span class="icon-backdelete"></span></li>
+                <li class="swiper-slide"><span class="icon-radiobox"></span></li>
+                <li class="swiper-slide"><span class="icon-writefill"></span></li>
+                <li class="swiper-slide"><span class="icon-write"></span></li>
+                <li class="swiper-slide"><span class="icon-safe"></span></li>
+                <li class="swiper-slide"><span class="icon-fenlei"></span></li>
+                <li class="swiper-slide"><span class="icon-crownfill"></span></li>
+                <li class="swiper-slide"><span class="icon-crown"></span></li>
+                <li class="swiper-slide"><span class="icon-qq"></span></li>
+                <li class="swiper-slide"><span class="icon-weibo"></span></li>
+                <li class="swiper-slide"><span class="icon-text"></span></li>
+                <li class="swiper-slide"><span class="icon-roundleftfill"></span></li>
+                <li class="swiper-slide"><span class="icon-triangledownfill"></span></li>
+                <li class="swiper-slide"><span class="icon-triangleupfill"></span></li>
+                <li class="swiper-slide"><span class="icon-zuobiao"></span></li>
+                <li class="swiper-slide"><span class="icon-qianbao"></span></li>
+                <li class="swiper-slide"><span class="icon-duihuanjifen"></span></li>
+                <li class="swiper-slide"><span class="icon-xiaoxi"></span></li>
+                <li class="swiper-slide"><span class="icon-huangguan"></span></li>
+                <li class="swiper-slide"><span class="icon-jifen"></span></li>
+                <li class="swiper-slide"><span class="icon-quanxian"></span></li>
+                <li class="swiper-slide"><span class="icon-jiaguanzhu"></span></li>
+                <li class="swiper-slide"><span class="icon-emojilight"></span></li>
+                <li class="swiper-slide"><span class="icon-keyboardlight"></span></li>
+                <li class="swiper-slide"><span class="icon-recordlight"></span></li>
+                <li class="swiper-slide"><span class="icon-roundaddlight"></span></li>
+                <li class="swiper-slide"><span class="icon-soundlight"></span></li>
+                <li class="swiper-slide"><span class="icon-weixinzhifu"></span></li>
+                <li class="swiper-slide"><span class="icon-piclight"></span></li>
+                <li class="swiper-slide"><span class="icon-fenleixuanzhong"></span></li>
+                <li class="swiper-slide"><span class="icon-shoplight"></span></li>
+                <li class="swiper-slide"><span class="icon-full"></span></li>
+                <li class="swiper-slide"><span class="icon-mail"></span></li>
+                
+        </ul>
+
+         
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    
+<script src="../js/swiper.min.js"></script>
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        slidesPerView: 4,
+        slidesPerColumn: 6,
+		slidesPerGroup: 4,
+        paginationClickable: true,
+        spaceBetween: 10
+    });
+    </script>
+</html>

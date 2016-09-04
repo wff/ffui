@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>header</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10" /> 
+<link type="text/css" rel="stylesheet" href="../css/commom.css"/>
+<link type="text/css" rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+<div class="container">
+    <header class="header">
+      <div class="fl icon-back"></div>
+      <div class="flexitem">页面标题</div>
+      <div class="fr ficon-search"></div>  
+    </header>
+ <header class="header">
+      <div class="fl icon-back"></div>
+      <div class="flexitem">页面标题</div>
+      <div class="fr">
+        <a class="icon-more db" href="javascript:void(0)"></a>
+        <div class="dowmmenu dblack">
+        <a href="#" class="dmenuitem"><i class="icon-shop"></i>商家入驻</a>
+        <a href="#" class="dmenuitem"><i class="icon-recordlight"></i>视频聊天</a>
+        <a href="#" class="dmenuitem"><i class="icon-refund"></i>立即充值</a>
+      </div>
+        </div>  
+    </header>
+    <header class="header">
+      <div class="fl icon-back">返回</div>
+      <div class="flexitem">
+          <div class="navbar">
+          <div class="navitem active">消息</div>
+          <div class="navitem">电话</div>
+          </div>
+      </div>
+      <div class="fr">
+          <a class="icon-add db" href="javascript:void(0)"></a>
+          <div class="dowmmenu">
+        <a href="#" class="dmenuitem"><i class="icon-shop"></i>商家入驻</a>
+        <a href="#" class="dmenuitem"><i class="icon-recordlight"></i>视频聊天</a>
+        <a href="#" class="dmenuitem"><i class="icon-refund"></i>立即充值</a>
+      </div>  
+      </div>
+
+      
+    </header>
+    <header class="header">
+      <div class="fl icon-unfold">深圳</div>
+      <div class="flexitem">
+          <div class="searchbar icon-search"><span class="vm">输入搜索内容</span></div>
+      </div>
+      <div class="fr icon-my"></div>  
+    </header>
+    <header class="header">
+      <div class="fl icon-scan"></div>
+      <div class="flexitem">
+          <div class="searchbar icon-search"><span class="vm">输入搜索内容</span></div>
+      </div>
+      <div class="fr">
+        <span class="icon-mark"></span>
+        <span class="icon-add"></span>
+        </div>  
+    </header>
+
+
+   </div>
+
+  
+
+
+   <footer class="footer">
+        <a href="#" class="footeritem icon-home active"><span>首页</span></a>
+        <a href="#" class="footeritem icon-fenlei"><span>全部</span></a>
+        <a href="#" class="footeritem icon-cart"><span>购物车</span></a>
+        <a href="#" class="footeritem icon-people"><span>我的</span></a>      
+    </footer>  
+<script src="../js/zepto.min.js"></script>
+<script>
+    $(function(){
+      $("a.ficon-add").tap(function(){
+       $("body").append("<div class='pop-wrap'></div>");
+       $(".dowmmenu").show();
+      })
+      $(".ficon-more").tap(function(){
+        $(this).next(".dowmmenu").toggle();
+      })
+    })
+</script>    
+</body>
+</html>

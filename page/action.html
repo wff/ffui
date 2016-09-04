@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>actionsheet</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10" /> 
+<link type="text/css" rel="stylesheet" href="../css/commom.css"/>
+</head>
+<body>
+    <header class="header">
+      <a class="fls icon-back" href="index.html"></a>
+      <div class="flexitem">actionsheet</div>    
+    </header> 
+<div class="container pd"> 
+	<div class="content">
+		UIActionSheet* mySheet = [[UIActionSheet alloc]  
+                           initWithTitle:@"ActionChoose"   
+                           delegate:self   
+                           cancelButtonTitle:@"Cancel"  
+                           destructiveButtonTitle:@"Destroy"  
+                           otherButtonTitles:@"OK", nil];  
+    [mySheet showInView:self.view];  
+与UIAlertView类似，我们也是在委托方法里处理按下按钮后的动作。记得在所委托的类加上UIActionSheetDelegate。
+
+
+ 
+
+- (void)actionSheetCancel:(UIActionSheet *)actionSheet{  
+    //   
+}  
+- (void) actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{  
+    //   
+}  
+-(void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex{  
+    //   
+}  
+-(void)actionSheet:(UIActionSheet *)actionSheet willDismissWithButtonIndex:(NSInteger)buttonIndex{  
+    //   
+}  
+看到那个红色的按钮没？那是ActionSheet支持的一种所谓的销毁按钮，对某户的某个动作起到警示作用，
+
+比如永久性删除一条消息或者日志。如果你指定了一个销毁按钮他就会以红色高亮显示：
+
+
+ 
+
+mySheet.destructiveButtonIndex=1;  
+与导航栏类似，操作表单也支持三种风格 ：
+
+ 
+
+
+ 
+
+UIActionSheetStyleDefault              //默认风格：灰色背景上显示白色文字   
+UIActionSheetStyleBlackTranslucent     //透明黑色背景，白色文字   
+UIActionSheetStyleBlackOpaque          //纯黑背景，白色文字  
+用法用例：
+
+ 
+
+mySheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+
+显示ActionSheet有三种方法：
+
+1.在一个视图内部显示，可以用showInView
+
+[mySheet showInView:self];
+
+2.如果要将ActonSheet 与工具栏或者标签栏对齐，可以使用showFromToolBar或showFromTabBar
+
+[mySheet showFromToolBar:toolbar];
+
+[mySheet showFromTabBar:tabbar];
+解除操作表单
+
+用户按下按钮之后，Actionsheet就会消失——除非应用程序有特殊原因，需要用户按下做个按钮。用dismiss方法可令表单消失：
+
+
+ 
+
+[mySheet dismissWithClickButtonIndex:1 animated:YES];  
+
+ 
+
+必须使用Protocol，在类定义的地方定义使用UIActionSheetDelegate协议，
+
+@interface XXXController : UIViewController  {...
+
+ 
+
+在程序里面调用
+
+UIActionSheet *actionSheet = [[UIActionSheet alloc]
+
+  initWithTitle:@"Are you sure?"         //标题
+
+  delegate:self                  //此处指定处理按钮按下之后的事件的类，该类必须实现UIActionSheetDelegate协议
+
+  cancelButtonTitle:@"Cancel" 
+
+  destructiveButtonTitle:@"OK"
+
+  otherButtonTitles:@"button1", @"button2", nil];  //可指定很多个button，最后一个参数必须为nil，此为OBJC特殊特性
+
+[actionSheet showInView:self.view];   //在哪个view里面弹出上拉菜单
+
+[actionSheet release];    //一定要release
+
+记得最后一定要release！
+	</div>
+
+</div>
+	<footer class="footer actionfooter">
+			<div class="flexitem icon-delete"></div>
+			<div class="flexitem icon-forward"></div>
+	</footer>
+	<div class="actionsheet">
+		<div class="pop-wrap"></div>
+		<div class="pop-content pop-sheet">
+			<ul class="aslist">
+					<li class="line-list">删除</li>
+					<li class="line-list">晒单</li>
+			</ul>
+			<ul class="aslist">
+					<li class="line-list cancel">取消</li>
+			</ul>
+			</div>
+	</div>   
+</body>
+<script type="text/javascript" src="../js/zepto.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$(".icon-forward,.icon-delete").tap(function(){
+			$(".actionsheet .pop-wrap").show();
+			$(".pop-sheet").addClass("pop-active");
+		})
+		$(".cancel").tap(function(){
+			$(".actionsheet .pop-wrap").hide();
+			$(".pop-sheet").removeClass("pop-active");
+		})
+	})
+</script> 
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>swiper</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10" /> 
+<link type="text/css" rel="stylesheet" href="../css/commom.css"/>
+
+</head>
+<body>
+    <header class="header">
+      <a class="fls icon-back" href="index.html"></a>
+      <div class="flexitem">search</div>    
+    </header>  
+<div class="container">  
+    <div class="searchbar-wrap">
+                <div class="ui-searchbar">
+                    <i class="icon-search"></i>
+                    <div class="searchbar-text">搜索商品</div>
+                    <div class="searchbar-input flexitem"><input value="" type="text" placeholder="搜索商品"></div>
+                    <i class="icon-roundclosefill"></i>
+                </div>
+                 <button class="rui-btn bg-blue">搜索</button> 
+            </div>
+        <div class="searchbar-wrap focus n-searchbar">
+                <div class="ui-searchbar">
+                    <div class="searchbar-text">搜索商品</div>                 
+                    <div class="searchbar-input flexitem"><input value="" type="text" placeholder="搜索商品"></div>
+                    <i class="icon-roundclosefill"></i>
+                    <i class="icon-search"></i>                   
+                </div>
+                 <button class="rui-btn">关闭</button> 
+            </div>
+            <div class="line-cells line-cells-access line-access-history">
+                <a href="#" class="line-item"><i class="icon-time"></i><div class="line-item-left">手机数码</div></a>
+                <a href="#" class="line-item"><i class="icon-time"></i><div class="line-item-left">家用电器</div></a>
+                <a href="#" class="line-item"><i class="icon-time"></i><div class="line-item-left">电脑办公</div></a>
+                <a href="#" class="line-item lt-clear"><div class="line-item-left">清除历史记录</div></a>
+            </div>
+            <div class="line-cell-title">大家都在搜</div>
+            <div class="itablist">
+               <span class="itemtab">手机</span> <span class="itemtab">智能设备</span> <span class="itemtab">配件</span> 
+               <span class="itemtab fc-red">IPhone手机</span> <span class="itemtab fc-orange">冰箱洗衣机</span> <span class="itemtab fc-blue">百货用品</span>
+               <span class="itemtab fc-green">三星手机</span> <span class="itemtab">智能设备</span> <span class="itemtab">配件</span>  
+            </div>
+            <div class="line-cell-title">小标签</div>
+            <div class="itablist itabsmall">
+               <span class="itemtab">手机</span> <span class="itemtab">智能设备</span> <span class="itemtab">配件</span> 
+               <span class="itemtab fc-red">IPhone手机</span> <span class="itemtab fc-orange">冰箱洗衣机</span> <span class="itemtab fc-blue">百货用品</span>
+               <span class="itemtab fc-green">三星手机</span> <span class="itemtab">智能设备</span> <span class="itemtab">配件</span>  
+            </div>       
+ </div>
+<script src="../js/zepto.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+       $(".ui-searchbar").tap(function(){
+           $(this).closest('.searchbar-wrap').addClass('focus');
+           $(this).find("input").focus();
+       }) 
+       $(".icon-roundclosefill").tap(function(){
+           $(this).siblings(".searchbar-input").find("input").val(""); 
+       })
+       $('.searchbar-wrap input').keyup(function(){
+           $(this).parent().siblings(".icon-roundclosefill").show();
+       })
+    })
+</script>
+</body>
+</html>

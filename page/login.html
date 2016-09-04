@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10" /> 
+<link type="text/css" rel="stylesheet" href="../css/commom.css"/>
+<link type="text/css" rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+<div class="container">
+    <h1>Form表单填写</h1>
+    <div class="line-cell-title">单选列表项</div>
+    <ul class="line-cells item-select">
+    	<li class="line-item active">北京市</li>
+        <li class="line-item">上海市</li>
+        <li class="line-item">深圳市</li>
+    </ul>
+    <div class="line-cell-title">多选列表项</div>
+    <ul class="line-cells multi-select">
+    	<li class="line-item active">北京市</li>
+        <li class="line-item">上海市</li>
+        <li class="line-item">深圳市</li>
+    </ul>
+    
+    
+    <div class="line-cell-title">表单填写</div>
+    <div class="line-cells item-form">
+    	<div class="line-item">
+        	<div class="line-item-text"><label class="item-label">qq</label></div>
+            <div class="line-item-left">
+            <input class="item-input" type="number" pattern="[0-9]*" placeholder="请输入qq号"/>
+            </div>
+        </div>
+    	<div class="line-item item-code">
+        	<div class="line-item-text"><label class="item-label">验证码</label></div>
+            <div class="line-item-left">
+            <input class="item-input" type="number" pattern="[0-9]*" placeholder="请输入验证码"/>
+            </div>
+            <div class="rxr"><img src="../images/vcode.jpg" alt="" height="47px"></div>
+        </div>
+    	<div class="line-item">
+        	<div class="line-item-text"><label class="item-label">银行卡</label></div>
+            <div class="line-item-left">
+            <input class="item-input" type="number" pattern="[0-9]*" placeholder="请输入银行卡号"/>
+            </div>
+        </div>
+    	<div class="line-item">
+        	<div class="line-item-text"><label class="item-label">身份证号</label></div>
+            <div class="line-item-left">
+            <input class="item-input" type="number" pattern="[0-9]*" placeholder="请输入身份证"/>
+            </div>
+        </div>
+    	<div class="line-item">
+        	<div class="line-item-text"><label class="item-label">电话</label></div>
+            <div class="line-item-left">
+            <input class="item-input" type="number" pattern="[0-9]*" placeholder="请输入联系电话"/>
+            </div>
+        </div>
+         </div>
+    
+    <div class="line-cell-title">图片上传</div>
+    <div class="line-cells">
+    	<div class="flex-box nopad">
+        	<div class="flexitem">图片上传</div>
+            <div class="line-item-right">0/9</div>
+        </div>
+    	<div class="flex-box">
+        <div class="line-item-left">
+             <ul class="uploader-files">
+                 <li class="uploader-file"><img src="../images/1.jpg" alt=""></li>
+                 <li class="uploader-file"><img src="../images/2.jpg" alt=""></li>
+                 <li class="uploader-file"><img src="../images/6.jpg" alt=""></li>
+                 <li class="uploader-file"><img src="../images/7.jpg" alt=""></li>
+                 <li class="uploader-file"><img src="../images/8.jpg" alt=""></li>
+                 <li class="uploader-file"><img src="../images/10.jpg" alt=""></li>                            
+                 <li class="uploader-file"><img src="../images/9.jpg" alt=""></li>                            
+                 <li class="uploader-file uploader-status">
+                      <img src="../images/4.jpg" alt="">
+                      <div class="uploader-status-content">
+                      <i class="iconfont">&#xe62e;</i>
+                      </div>
+                 </li>
+                  <li class="uploader-file uploader-status">
+                     <img src="../images/5.jpg" alt="">
+                     <div class="uploader-status-content">50%</div>
+                    </li>
+                   </ul>
+            	<div class="upload-add">
+                    <input class="uploader-input" type="file" accept="image/*" multiple />
+                 </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="line-cell-title">文本域</div>
+    <div class="line-cells">
+    	<div class="pd">
+        <textarea class="item-textarea" placeholder="请输入评论" rows="3"></textarea>
+        <div class="tr">0/200</div>
+        </div>
+    </div>
+    
+    <div class="line-cell-title">表单报错</div>
+    <div class="line-cells item-form">
+    	<div class="line-item warm-item">
+        	<div class="line-item-text"><label class="item-label">卡号</label></div>
+            <div class="line-item-left">
+            <input class="item-input" type="number" pattern="[0-9]*" placeholder="请输入卡号"/>
+            </div>
+             <div class="rxr"><i class="ficon-warm"></i></div>
+        </div>
+    	<div class="line-item">
+        	<div class="line-item-text"><label class="item-label">日期</label></div>
+            <div class="line-item-left">
+            <input class="item-input" type="date" value=""/>
+            </div>
+           
+        </div>
+    	<div class="line-item">
+        	<div class="line-item-text"><label class="item-label">时间</label></div>
+            <div class="line-item-left">
+            <input class="item-input" type="datetime-local" value="" placeholder=""/>
+            </div>
+        </div>
+         </div>
+    
+    
+    <div class="line-cell-title">选择</div>
+    <div class="line-cells item-select-before">
+    	<div class="line-item">
+        	<div class="line-item-text">
+             <select class="item-select" name="select2">
+                    <option value="1">+86</option>
+                    <option value="2">+80</option>
+                    <option value="3">+84</option>
+                    <option value="4">+87</option>
+                </select>
+            </div>
+            <div class="line-item-left">
+            <input class="item-input" type="number" pattern="[0-9]*" placeholder="请输入号码"/>
+            </div>
+             <div class="rxr"><i class="iconfont">&#xe62e;</i></div>
+        </div>
+    	<div class="line-item">
+        	<div class="line-item-text"><label class="item-label">日期</label></div>
+            <div class="line-item-left">
+            <input class="item-input" type="date" value=""/>
+            </div>
+           
+        </div>
+    	<div class="line-item">
+        	<div class="line-item-text"><label class="item-label">时间</label></div>
+            <div class="line-item-left">
+            <input class="item-input" type="datetime-local" value="" placeholder=""/>
+            </div>
+        </div>
+         </div>    
+   </div> 
+<script type="text/javascript" src="../js/zepto.min.js"></script>
+<script type="text/javascript" src="../js/group.js"></script>
+</body>
+</html>

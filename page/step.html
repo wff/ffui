@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>流程</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10" /> 
+<link type="text/css" rel="stylesheet" href="../css/commom.css"/>
+<link type="text/css" rel="stylesheet" href="../css/swiper.min.css"/>
+    <style>
+    html, body {
+        position: relative;
+        height: 100%;
+    }
+    body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+    }
+	.step-container{
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-moz-box-orient: vertical;
+	-ms-flex-direction: column;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	height:100%;
+	box-sizing:border-box;
+	}
+	.flexitem{
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	}
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+    }
+	.step-note{ background:#10abfe; height:6px; width:100%; position:relative; margin-top:20px;}
+	.step-note i{ width:16px; height:16px; display:block; background:#fff; border-radius:50%; position:absolute; top:50%; left:50%; margin:-10px 0 0 -10px; border:2px solid #21b1fd;}
+	.slide-on .step-note i{ background:#fe4e4e; border:3px solid #fff; box-shadow:0 0 4px rgba(0,0,0,0.5);margin:-11px 0 0 -11px;}
+	.steptext{ padding-top:10px; background:#fff; height:100%; box-sizing:border-box; margin-top:25px; position:relative;box-shadow:0 8px 8px -7px rgba(0,0,0,0.2) inset; }
+	.steptext:before{
+	  content: " ";
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+	  width: 100%;
+	  height: 1px;
+	  border-top: 1px solid #d0d0d0;
+	  color: #d0d0d0;
+	  -webkit-transform-origin: 0 0;
+			  transform-origin: 0 0;
+	  -webkit-transform: scaleY(0.5);
+			  transform: scaleY(0.5);
+		}
+	.steptext:after{ content:""; position:absolute; right:0px; top:0px;
+	  width: 1px;
+  height: 100%;
+  border-left: 1px solid #eaeaea;
+  color: #eaeaea;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: scaleX(0.5);
+          transform: scaleX(0.5); 
+		}	
+	.steptext span{ display:inline-block; font-size:18px; width:18px; line-height:22px; color:#333;}
+	.slide-on .steptext span{ color:#fe4e4e;}
+	.icon-shenzhenshenzhen:before{ display:block; color:#00a83b; margin:10px auto;}
+	.station-text{ background:#fff; border-radius:10px; margin:20px 10px; text-align:center; padding:15px 0;}
+	.station-num{ display:inline-block; vertical-align:middle; position:relative; border-radius:3px; padding:2px 8px; margin-right:8px;}
+	.station-num:after{ 
+	width:200%; height:200%; position:absolute; content:"";
+	 border:1px solid #d0d0d0;   
+	-webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5); 
+		  border-radius:6px; top:0; left:0;
+		}
+		.station-cz{ position:absolute; bottom:10px; z-index:100; width:100%;  padding:10px; box-sizing:border-box; }
+		.station-cz .flex-box{background:#fff; box-shadow:0 0 8px rgba(0,0,0,0.3);border-radius:10px; text-align:center;}
+		.station-cz .db{ font-size:13px; color:#666;}
+    </style>
+</head>
+<body>
+<div class="step-container">
+<div class="vmiddle">
+	<div class="line-cells pd">
+    	<h4>开往南山总站</h4>
+        <div class="fs-14 fc-6">服务时间：6:00-21:00　 票价：6无</div>
+    </div>
+    <div class="station-text">
+    	<span class="fs-30 db">E27</span>
+    	<span class="station-num">3站</span><span class="fc-blue fs-22 vm">8分</span>
+    </div>
+
+</div>
+<div class="swiper-container flexitem">
+    <div class="station-cz">
+            	<div class="flex-box">
+                	<div class="line-item-left">
+                    	<i class="icon-favor fc-orange"></i>
+                        <span class="db">收藏</span>
+                    </div>
+                    <div class="line-item-left">
+                    	<i class="icon-notification fc-green"></i>
+                        <span class="db">提醒</span>
+                    </div>
+                    <div class="line-item-left">
+                    	<i class="icon-delete fc-blue"></i>
+                       <span class="db"> 删除</span>
+                    </div>
+                    <div class="line-item-left">
+                    	<i class="icon-write fc-lblue"></i>
+                        <span class="db">编辑</span>
+                    </div>
+                    <div class="line-item-left">
+                    	<i class="icon-forward fc-red"></i>
+                        <span class="db">转发</span>
+                    </div>
+                </div>
+            </div>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="step-note"><i></i></div>
+            	<div class="steptext"><span>1雪岗北总站</span></div>
+	         </div>
+            <div class="swiper-slide">
+                <div class="step-note"><i></i></div>
+            	<div class="steptext"><span>2华为总部</span></div>
+	         </div>
+            <div class="swiper-slide">
+                <div class="step-note"><i></i></div>
+            	<div class="steptext"><span>3岗头村委</span></div>
+	         </div>
+            <div class="swiper-slide">
+                <div class="step-note"><i></i></div>
+            	<div class="steptext"><span>4杨美村</span><i class="icon-shenzhenshenzhen"></i></div>
+	         </div>
+            <div class="swiper-slide slide-on">
+                <div class="step-note"><i></i></div>
+            	<div class="steptext"><span>5建新社区</span></div>
+	         </div>
+            <div class="swiper-slide">
+                <div class="step-note"><i></i></div>
+            	<div class="steptext"><span>7龙岗党校</span></div>
+	         </div>
+            <div class="swiper-slide">
+                <div class="step-note"><i></i></div>
+            	<div class="steptext"><span>8龙岗海关大厦</span></div>
+	         </div>
+            <div class="swiper-slide">
+                <div class="step-note"><i></i></div>
+            	<div class="steptext"><span>9紫薇花园</span></div>
+	         </div>
+            <div class="swiper-slide">
+                <div class="step-note"><i></i></div>
+            	<div class="steptext"><span>10龙福一村</span></div>
+	         </div>
+            <div class="swiper-slide">
+                <div class="step-note"><i></i></div>
+            	<div class="steptext"><span>11龙城广场地铁站</span></div>
+	         </div>
+            <div class="swiper-slide">
+                <div class="step-note"><i></i></div>
+            	<div class="steptext"><span>12满京华总站</span></div>
+	         </div>
+        </div>
+ 
+    </div>
+<!--<div class="swiper-container flexitem">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="step-note"><i></i></div>
+            	<div class="steptext"><span>1团长发起组团</span></div>
+	         </div>
+            <div class="swiper-slide">
+                <div class="step-note"><i></i></div>
+            	<div class="steptext"><span>2购买支付</span></div>
+	         </div>
+            <div class="swiper-slide">
+                <div class="step-note"><i></i></div>
+            	<div class="steptext"><span>3好友参团</span></div>
+	         </div>
+            <div class="swiper-slide">
+                <div class="step-note"><i></i></div>
+            	<div class="steptext"><span>4达到拼团人数</span></div>
+	         </div>
+            <div class="swiper-slide">
+                <div class="step-note"><i></i></div>
+            	<div class="steptext"><span>1团长发起组团</span></div>
+	         </div>
+            <div class="swiper-slide">
+                <div class="step-note"><i></i></div>
+            	<div class="steptext"><span>1团长发起组团</span></div>
+	         </div>
+            <div class="swiper-slide">
+                <div class="step-note"><i></i></div>
+            	<div class="steptext"><span>1团长发起组团</span></div>
+	         </div>
+            <div class="swiper-slide">
+                <div class="step-note"><i></i></div>
+            	<div class="steptext"><span>1团长发起组团</span></div>
+	         </div>
+            <div class="swiper-slide">
+                <div class="step-note"><i></i></div>
+            	<div class="steptext"><span>1团长发起组团</span></div>
+	         </div>
+            <div class="swiper-slide">
+                <div class="step-note"><i></i></div>
+            	<div class="steptext"><span>1团长发起组团</span></div>
+	         </div>
+            <div class="swiper-slide">
+                <div class="step-note"><i></i></div>
+            	<div class="steptext"><span>1团长发起组团</span></div>
+	         </div>
+            <div class="swiper-slide">
+                <div class="step-note"><i></i></div>
+            	<div class="steptext"><span>1团长发起组团</span></div>
+	         </div>
+            <div class="swiper-slide">
+                <div class="step-note"><i></i></div>
+            	<div class="steptext"><span>1团长发起组团</span></div>
+	         </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>-->
+    </div>
+<script src="../js/swiper.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        slidesPerView: 7,
+        paginationClickable: true,
+        spaceBetween: 0
+    });
+</script>
+</body>
+</html>
