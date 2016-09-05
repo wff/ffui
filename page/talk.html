@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cardview</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10" /> 
+<link type="text/css" rel="stylesheet" href="../css/commom.css"/>
+<style>
+.talklist{ padding:0 15px;}
+.header .fl{font-size:18px;}
+.icon-back:before{ margin-right:0px;}
+.header .flexitem{font-size:20px;}
+.gray-time{ margin-bottom:10px;}
+.talk-content{ background:#fff;position:relative;  border-radius:5px; padding:10px; display: inline-block;}
+.talklist .flexitem:before{
+	
+}
+.talk-content:after {
+	content: " ";
+	width: 200%;
+	height: 200%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: 1px solid rgba(0,0,0,0.15);
+	-webkit-transform: scale(0.5);
+	transform: scale(0.5);
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+</style>
+</head>
+<body>
+	<header class="header">
+      <div class="fl icon-back">朋友</div>
+      <div class="flexitem">
+          林微音
+      </div>
+      <div class="fr icon-my"></div>  
+    </header>
+	<div class="container">	
+		<ul class="talklist">
+			<li>
+				<div class="gray-time"><span>昨天18:29</span></div>
+				<div class="flexbox">
+				<div class="line-media">
+					<img src="../images/1.jpg" alt=""> 
+				</div>
+				<div class="flexitem">
+					<div class="talk-content">江省之变，大略具雁内，久而未发。</div>
+				</div>
+				</div>		
+			</li>
+		</ul>
+
+	</div>
+
+</body>
+<script type="text/javascript" src="../js/zepto.min.js"></script>
+</html>

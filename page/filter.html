@@ -7,12 +7,12 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <meta name="format-detection" content="telephone=no">
-<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10" /> 
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10" />
 <link type="text/css" rel="stylesheet" href="../css/commom.css"/>
 <link type="text/css" rel="stylesheet" href="../css/swiper.min.css"/>
 <style type="text/css">
 .dropnavbar .flexitem{ text-align:center; line-height:45px; position:relative;}
-.dropnavbar .flexitem:after{ content:""; position:absolute; width:1px; height:100%; border-left:1px solid #dadbdc; right:0px; transform:scaleX(0.5); -webkit-transform:scaleX(0.5);}
+.dropnavbar .flexitem:after{ content:""; position:absolute; width:1px; height:100%; border-right:1px solid #dadbdc; right:0px; transform:scaleX(0.5); -webkit-transform:scaleX(0.5);}
 .dropnavbar .flexitem:last-child:after{ display:none;}
 .dropnavbar .flexitem span:after{
     content: " ";
@@ -27,15 +27,49 @@
   position:relative;
   top:-3px;
   margin-left: 10px;
+  -webkit-transition-duration:300ms;
+  transition-duration:300ms;
 }
+.dropnavbar .flexitem.dropnb-on span{ color:#12b7f5;}
+.dropnavbar .flexitem.dropnb-on span:after{  
+  -webkit-transform: rotate(315deg);
+          transform: rotate(315deg); top:0px;border-color: #12b7f5;
+}
+
 .dropmenu .line-cells:before{display:none;}
 .remind-num{background:#ccc;}
-.leftdrop .line-cells{ background:#f5f5f5;}
-.header{ z-index: 30; position: relative; margin-bottom:0px; width:100%;}
-.dropnavbar{z-index: 40; position: relative; width:100%;}
+.leftdrop.line-cells{ background:#f5f5f5;}
+.header{ z-index: 30; position: relative; margin-bottom:0px;}
+.dropnavbar{z-index: 40; position: relative;}
 .line-cells:before{ display:none;}
-.leftdrop{ height:375px;}
-.dropmenu{position: absolute; z-index: 50;width:100%; background:#fff;}
+.dropmenu{position: absolute; z-index: 20;width:100%; background:#fff;
+	top:0;
+	left:0;
+	right:0;
+	-webkit-transition:-webkit-transform .5s ease;
+	-moz-transition:transform .5s ease,-moz-transform .5s ease;
+	-o-transition:transform .5s ease,-o-transform .5s ease;
+	transition:transform .5s ease;
+	transition:transform .5s ease,-webkit-transform .5s ease,-moz-transform .5s ease,-o-transform .5s ease;
+	-webkit-transform:translate3d(0,-100%,0);
+	-moz-transform:translate3d(0,-100%,0);
+	transform:translate3d(0,-100%,0);
+	opacity:0;
+}
+.dropmenu.dmenu-active{
+	-webkit-transform:translate3d(0,95px,0);
+	-moz-transform:translate3d(0,95px,0);
+	transform:translate3d(0,95px,0);
+	opacity:1;
+}
+.dropmenu .line-item:before{ left:0px; }
+.leftdrop.line-cells .line-item:after{content:""; position:absolute; right:0px; width:1px; height:100%; border-right:1px solid #dadbdc; top:0px; -webkit-transform:scaleX(0.5);transform:scaleX(0.5);}
+.dropmenu .flexitem ul{ height:375px; overflow-y:scroll;}
+.leftdrop.line-cells .line-item-on{ background:#fff;}
+.leftdrop.line-cells .line-item-on.line-item:after{border-right:1px solid #fff;}
+.pop-wrap{ display:none;}
+.itablist{ padding:15px 10px;}
+.itemtab{ font-size:12px; width:23%; text-align:center; box-sizing:border-box; margin:5px 1%; padding:0; color:#666;}
 </style>
 </head>
 <body>
@@ -45,251 +79,110 @@
     </header>  
 <div class="container">
   <div class="line-cells flexbox dropnavbar">
-      <div class="flexitem vmiddle"><span>全部</span></div>
-      <div class="flexitem vmiddle"><span>人气</span></div>
-      <div class="flexitem vmiddle"><span>价格</span></div>
-      <div class="flexitem vmiddle"><span>进度</span></div>
+      <div class="flexitem vmiddle" id="dm1"><span>全部</span></div>
+      <div class="flexitem vmiddle" id="dm2"><span>人气</span></div>
+      <div class="flexitem vmiddle" id="dm3"><span>价格</span></div>
+      <div class="flexitem vmiddle" id="dm4"><span>筛选</span></div>
   </div>
-
+  <div class="dmenu-wrap">
   <div class="flexbox dropmenu">
-    <div class="flexitem leftdrop">
-    <ul class="line-cells">
-    	<li class="line-item">
-            <div class="line-item-left">深圳市</div>
-        </li>
-    	<li class="line-item">
-        	<div class="line-item-left">福田区</div>
-        </li>
-    	<li class="line-item">
-        	<div class="line-item-left">南山区</div>
-        </li>
-        <li class="line-item">
-        	<div class="line-item-left">盐田区</div>
-        </li>
-        <li class="line-item">
-        	<div class="line-item-left">龙岗区</div>
-        </li>
-        <li class="line-item">
-        	<div class="line-item-left">宝安区</div>
-        </li>
-        <li class="line-item">
-        	<div class="line-item-left">龙华新区</div>
-        </li>        
-        <li class="line-item">
-        	<div class="line-item-left">大鹏新区</div>
-        </li>
-        <li class="line-item">
-        	<div class="line-item-left">坪山新区</div>
-
-        </li>
-        <li class="line-item">
-        	<div class="line-item-left">光明新区</div>
-        </li>
+    <div class="flexitem line-cells leftdrop">
+    <ul>
+    	<li class="line-item"><div class="line-item-left">深圳市</div></li>
+        <li class="line-item"><div class="line-item-left">福田区</div></li>
+        <li class="line-item line-item-on"><div class="line-item-left">南山区</div></li>
+        <li class="line-item"><div class="line-item-left">盐田区</div></li>
+        <li class="line-item"><div class="line-item-left">龙岗区</div></li>
+        <li class="line-item"><div class="line-item-left">宝安区</div></li>
+        <li class="line-item"><div class="line-item-left">龙华新区</div></li>
+        <li class="line-item"><div class="line-item-left">大鹏新区</div></li>
+        <li class="line-item"><div class="line-item-left">坪山新区</div></li>
+        <li class="line-item"><div class="line-item-left">光明新区</div></li>
+        <li class="line-item"><div class="line-item-left">深圳市</div></li>      
     </ul>
     </div>
-    <div class="flexitem">
-    <ul class="line-cells">
-    	<li class="line-item">
-            <div class="line-item-left">深圳</div>
-            <div class="line-item-right"><span class="remind-num bg-blue">99</span></div>
-        </li>
-    	<li class="line-item">
-        	<div class="line-item-left">广州</div>
-            <div class="line-item-right"><span class="remind-num bg-green">199</span></div>
-        </li>
-    	<li class="line-item">
-        	<div class="line-item-left">长沙</div>
-            <div class="line-item-right"><span class="remind-num bg-red">49</span></div>
-        </li>
-        <li class="line-item">
-        	<div class="line-item-left">杭州</div>
-            <div class="line-item-right"><span class="remind-num bg-yellow">5</span></div>
-        </li>
-        <li class="line-item">
-        	<div class="line-item-left">上海</div>
-            <div class="line-item-right"><span class="round-dot"></span></div>
-        </li>
+    <div class="flexitem line-cells">
+    <ul>
+    	<li class="line-item"><div class="line-item-left">全部</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">香蜜湖</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">华强北</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">华强南</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">购物公园</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">中心书城</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">CBD中心区</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">梅林周边</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">车公庙</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">八卦岭周边</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">皇岗周边</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">新城市广场</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">景田周边</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">会展中心</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">竹子林</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">连城新天地</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">东海购物广场</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
     </ul>
     </div>
   </div>
-<div class="content">
-  
-登录 | 注册
-西门吹吹吹雪
-目录视图摘要视图订阅
- 移动端HTML5点击事件闪现灰色背景解决方案
-标签： html5移动点击灰色背景
-2016-06-16 09:58 345人阅读 评论(0) 收藏 举报
-隐藏文本框阴影
+  <div class="dropmenu">
+    <ul class="item-select">
+    	<li class="line-item active">默认排序</li>
+        <li class="line-item">离我最近</li>
+        <li class="line-item">销量最高</li>
+        <li class="line-item">评价最高</li>
+        <li class="line-item">价格最低</li>
+        <li class="line-item">价格最高</li>
+        <li class="line-item">最新发布</li>
+    </ul>
+  </div>
+  <div class="dropmenu">
+    <ul class="item-select">
+    	<li class="line-item active">不限</li>
+        <li class="line-item">200万以下</li>
+        <li class="line-item">200万-300万</li>
+        <li class="line-item">300万-500万</li>
+        <li class="line-item">500万-800万</li>
+        <li class="line-item">800万-900万</li>
+        <li class="line-item">1000万以上</li>
+    </ul>
+  </div>
+  <div class="dropmenu">	
+      <div class="itablist">
+               <span class="itemtab">手机</span>
+               <span class="itemtab">智能设备</span>
+               <span class="itemtab">配件</span>
+               <span class="itemtab">IPhone手机</span>
+               <span class="itemtab">冰箱洗衣机</span>
+               <span class="itemtab">百货用品</span>
+               <span class="itemtab">三星手机</span>
+               <span class="itemtab">智能设备</span>
+                <span class="itemtab">电视</span>
+                <span class="itemtab">主机</span>
+                <span class="itemtab">箱包</span>
+                <span class="itemtab">日用品</span>  
+            </div>
 
-input, textarea{-webkit-appearance: @none;}
-取消手机点击屏幕时，会出现的灰块
-
-html,body{-webkit-text-size-adjust: 100%;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
- 　
-
-移动端网站或APP点击后出现闪动或灰色背景
-
-只需对绑定事件添加class样式 使其触发事件时背景为透明色  
-
-.class{-webkit-tap-highlight-color:transparent;}
-顶
-1
-踩
-0
- 
- 
-上一篇Eclipse for Mac 常用快捷键
-下一篇EL表达式中取整或保留两位小数
-猜你在找
-HTML5开发手机App之：HTML5系统教程HTML5开发手机App之：CSS全教程移动手机APP测试从零开始（高级篇）移动手机APP测试从零开始（初级篇）移动手机APP测试从零开始（中级篇）
-鼠标移动太快mouseout事件不触发解决方案Phonegap+Sencha Touch 移动开发25 关于sencha touch在华为红米HTC等部分手机下hide事件失效msgbox无法关闭的解决方案移动终端html5自适应解决方案html5+phonegap中小企业移动终端应用解决方案最佳选择html+jquery19+cube解决方案+移动自适应基础结构模板
-查看评论
-
-  暂无评论
-
-您还没有登录,请[登录]或[注册]
-* 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场
-核心技术类目
-全部主题 Hadoop AWS 移动游戏 Java Android iOS Swift 智能硬件 Docker OpenStack VPN Spark ERP IE10 Eclipse CRM JavaScript 数据库 Ubuntu NFC WAP jQuery BI HTML5 Spring Apache .NET API HTML SDK IIS Fedora XML LBS Unity Splashtop UML components Windows Mobile Rails QEMU KDE Cassandra CloudStack FTC coremail OPhone CouchBase 云计算 iOS6 Rackspace Web App SpringSide Maemo Compuware 大数据 aptech Perl Tornado Ruby Hibernate ThinkPHP HBase Pure Solr Angular Cloud Foundry Redis Scala Django Bootstrap
-个人资料
- 访问我的空间 
-听说你在这里
- 
- 2
-访问：29870次
-积分：1161
-等级： 
-排名：千里之外
-原创：60篇转载：93篇译文：15篇评论：18条
-文章搜索
-
-搜索
-文章分类
-java程序性能优化(6)
-大型分布式网站架构设计与实践(3)
-Hibernate(2)
-web(6)
-异常(4)
-Struts Spring 缓存(1)
-HashMap(1)
-IOS(3)
-MySQL(20)
-Elasticsearch(2)
-TcpDump抓包(1)
-百度地图(2)
-JDK(2)
-jsp(6)
-maven(8)
-java线程(8)
-数据源(1)
-svn(6)
-安全框架shiro(1)
-拦截器(1)
-编码格式(1)
-过滤器(1)
-java(7)
-java序列化(2)
-设计模式(3)
-Linux文件权限(3)
-CommonsMultipartFile(2)
-Ip(1)
-Mac(5)
-Shell(1)
-架构设计(1)
-负载均衡(1)
-Nginx(3)
-Linux(6)
-微信开发(5)
-ngrok(1)
-Eclipse(6)
-jstack(1)
-Redis(5)
-Dos(3)
-IntelliJ IDEA(4)
-Logback与Log4J(2)
-分布式系统(1)
-Chrome(2)
-CentOS 7(5)
-版本迭代心得(0)
-正则表达式(0)
-decorators(1)
-XML(1)
-Tomcat(1)
-MyBa(1)
-mybatis(1)
-JavaScript(0)
-log(0)
-HTML5(3)
-HTM(0)
-PL/SQL(0)
-加密解密(0)
-文章存档
-2016年08月(3)
-2016年07月(3)
-2016年06月(12)
-2016年05月(10)
-2016年04月(11)
-展开
-阅读排行
-警告：MySQL-server-5.5.46-1.linux2.6.x86_64.rpm: 头V3 DSA/SHA1 Signature, 密钥 ID 5072e1f5: NOKEY(907)
-svn: E215004: Authentication failed(564)
-map中 key,value 对换 ,互换,(561)
-SAE+Servlet+JSP实现微信公众平台OAuth2.0网页授权的使用(559)
-Required CommonsMultipartFile parameter 'pic' is not present(519)
-MySQL只有information_schema，test两个数据库(513)
-zsh切换bash bash切换zsh(513)
-Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)(489)
-org.springframework.web.multipart.commons.CommonsMultipartFile异常(462)
-Navicat Premium 11.1.12 简体中文 x86 x64 版 破解补丁(424)
-评论排行
-Navicat Premium 11.1.12 简体中文 x86 x64 版 破解补丁(9)
-IOS mysql/Java服务端对emoji表情的支持(6)
-大型分布式网站架构设计与实践 第一章《面向服务的体系架构（SOA)》1.1基于TCP协议的RPC(2)
-mac 搭建 内网微信服务 ngrok(1)
-设计模式六大原则 单一职责原则(0)
-用python/java实现hmacmd5加密的一个示例(0)
-java.lang.NoClassDefFoundError: org/hibernate/Session的异常处理(0)
-Spring Struts框架 缓存问题 同样的url返回结果不同(0)
-LOG4J输出日志到web目录的相对路径(0)
-Error creating bean with name 'sessionFactory' defined in ServletContext resource [/WEB-INF/applica(0)
-推荐文章
-* 郭神带你真正理解沉浸式模式
-* 优秀代码的格式准则
-* Hadoop的数据仓库实践——OLAP与数据可视化（二）
-* Android 视图篇——恼人的分割线留白解决之道
-* 移动端开发者眼中的前端开发流程变迁与前后端分离
-最新评论
-Navicat Premium 11.1.12 简体中文 x86 x64 版 破解补丁
-听说你在这里: @Tianyijiuyou:请重试，先完全卸载，安装完毕后不运行程序，破解完毕后再执行
-Navicat Premium 11.1.12 简体中文 x86 x64 版 破解补丁
-听说你在这里: @liupan182:已发送，请注意查收
-Navicat Premium 11.1.12 简体中文 x86 x64 版 破解补丁
-Tianyijiuyou: 同问
-Navicat Premium 11.1.12 简体中文 x86 x64 版 破解补丁
-liupan182: @CSDNones:5951479@QQ.com
-Navicat Premium 11.1.12 简体中文 x86 x64 版 破解补丁
-yibu456: 请问博主，我运行补丁时出现“Patch successfully (1 modifieds)”，会是...
-Navicat Premium 11.1.12 简体中文 x86 x64 版 破解补丁
-听说你在这里: @liupan182:这邮箱不合法吧
-Navicat Premium 11.1.12 简体中文 x86 x64 版 破解补丁
-liupan182: 博主麻烦发一份给我可以么，邮箱：5951479{@}QQ.com
-Navicat Premium 11.1.12 简体中文 x86 x64 版 破解补丁
-听说你在这里: @u012706549:邮箱
-Navicat Premium 11.1.12 简体中文 x86 x64 版 破解补丁
-_绽放: 过期了
-IOS mysql/Java服务端对emoji表情的支持
-江东槐树下: @CSDNones:我是java的httpclient请求用户信息，返回字符串用UTF-8编码是不行...
-公司简介|招贤纳士|广告服务|银行汇款帐号|联系方式|版权声明|法律顾问|问题报告|合作伙伴|论坛反馈
-网站客服杂志客服微博客服webmaster@csdn.net400-600-2320|北京创新乐知信息技术有限公司 版权所有|江苏乐知网络技术有限公司 提供商务支持
-京 ICP 证 09002463 号|Copyright © 1999-2016, CSDN.NET, All Rights Reserved GongshangLogo
-
-搜索复制
+  </div>
+  </div>
+  <div class="swiper-slide" style="padding:20px; line-height:32px; box-sizing:border-box">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lacinia vulputate hendrerit. Suspendisse potenti. Etiam rutrum egestas massa, ut facilisis magna tristique nec. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc interdum tempus turpis ut tempus. Mauris dictum blandit lectus, a dictum erat dictum non. Etiam ultrices convallis interdum. Curabitur varius auctor enim, quis dictum nibh fringilla ut. Sed vel lacus ac odio molestie sodales quis sit amet lacus. Curabitur id porta eros. Fusce in varius nisi.
+           
+           
+            </div>
 </div>
-<div class="pop-wrap"></div> 
-</div>
+<div class="pop-wrap"></div>
 <script src="../js/zepto.min.js"></script>
-<script src="../js/swiper.min.js"></script>
-  
+<script type="text/javascript" src="../js/group.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(".dropnavbar .flexitem").tap(function(){
+		var ditem=$(".dmenu-wrap .dropmenu").eq($(this).index());
+		$(this).addClass("dropnb-on").siblings().removeClass("dropnb-on");
+		ditem.siblings().removeClass("dmenu-active");
+		ditem.addClass("dmenu-active");
+		$(".pop-wrap").show();
+		})
+	})
+</script>
+ 
 </body>
 </html>
