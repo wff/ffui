@@ -625,6 +625,7 @@ transition: background-color 0.1s linear;
 
 .rui-btn.bg-f{ color: #333;}
 .rui-btn:after {
+ 
 	content: " ";
 	width: 200%;
 	height: 200%;

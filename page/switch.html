@@ -17,7 +17,7 @@
     <ul class="line-cells">
     	<li class="line-item">
             <div class="line-item-left">深圳</div>
-            <i class="icon-switch active"></i>
+            <div class="icon-switch active"><div class="switch-hand"></div></div>
         </li>
     	<li class="line-item">
         	<div class="line-item-left">杭州</div>
@@ -30,9 +30,12 @@
         </ul>
 </body>
 <script type="text/javascript" src="../js/zepto.min.js"></script>
+
 <script type="text/javascript">
 	$(function(){
-
+		$(".icon-switch").tap(function(){
+			$(this).toggleClass("active");
+		})
 	})
 </script> 
 </html>

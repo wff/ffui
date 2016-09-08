@@ -9,6 +9,45 @@
 <meta name="format-detection" content="telephone=no">
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10" /> 
 <link type="text/css" rel="stylesheet" href="../css/common.css"/>
+<style type="text/css">
+.demo2 .progressbar span{ 
+-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+.demo2 .progressbar span.dgreen{-webkit-animation:dgreen .6s linear;animation:dgreen .6s linear;width:100%}
+@keyframes dgreen{0%{width:0px;opacity: 0;}100%{opacity: 1;}}
+@-webkit-keyframes dgreen{0%{width:0px;opacity: 0;}100%{opacity: 1;}}
+
+.demo2 .progressbar span.dblue{-webkit-animation:dblue .6s linear;animation:dblue .6s linear;width:80%}
+@keyframes dblue{0%{width:0px;opacity: 0;}100%{opacity: 1;}}
+@-webkit-keyframes dblue{0%{width:0px;opacity: 0;}100%{opacity: 1;}}
+
+.demo2 .progressbar span.dyellow{-webkit-animation:dyellow .6s linear;animation:dyellow .6s linear;width:60%}
+@keyframes dyellow{0%{width:0px;opacity: 0;}100%{opacity: 1;}}
+@-webkit-keyframes dyellow{0%{width:0px;opacity: 0;}100%{opacity: 1;}}
+
+.demo2 .progressbar span.dred{-webkit-animation:dred .6s linear;animation:dred .6s linear;width:40%}
+@keyframes dred{0%{width:0px;opacity: 0;}100%{opacity: 1;}}
+@-webkit-keyframes dred{0%{width:0px;opacity: 0;}100%{opacity: 1;}}
+
+.dcolor{
+  background-image:-moz-linear-gradient(left,#4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
+  background-image:-webkit-linear-gradient(left,#4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
+  background-image:-o-linear-gradient(left,#4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
+  background-image:linear-gradient(to right,#4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
+	}
+.progress-shadow {
+  background-image: linear-gradient(to bottom, #eaecee, #f7f7f9);
+  height: 25px;
+  position: absolute;
+  left:0px;
+  top: 100%;
+  transform: skew(25deg);
+  transform-origin: 0 0;
+  width: 100%;
+  -webkit-animation:dgreen .6s linear;animation:dgreen .6s linear;
+}
+</style>
 </head>
 <body ontouchstart="">
     <header class="header">
@@ -16,12 +55,60 @@
       <div class="flexitem">进度条</div>    
     </header>
 <div class="container">
-	<div class="line-cell-title">动态设置进度条</div>
-    <div class="pd">
-        <div class="progressbar"><span></span></div>
-        <div class="dgreen" style="width:200px; height:200px;">
+	<div class="line-cell-title" style="line-height:30px;">点击加载</div>
+    <div style="padding:5px 15px;" class="demo1">
+        <div class="progressbar"><span class="dgreen"></span></div>
         </div>
+        <div style="padding:5px 15px;"><button class="rui-btn bg-green btn-block">开始加载</button> </div>
+        <div class="line-cell-title" style="line-height:30px;">自动加载</div>
+        <div style="padding:5px 15px;" class="demo2">
+            <div class="progressbar"><span class="dgreen"></span></div>
+            <div class="progressbar"><span class="dblue"></span></div>
+            <div class="progressbar"><span class="dyellow"></span></div>
+            <div class="progressbar"><span class="dred"></span></div>
+        </div>
+        <div class="line-cell-title" style="line-height:30px;">彩虹色进度条</div>
+        <div style="margin:5px 60px; position:relative;" class="demo2">
+            <div class="progressbar"><span class="dgreen dcolor"></span></div>
+            <div class="progress-shadow"></div>
+        </div>
+        <div class="line-cell-title" style="line-height:30px; margin-top:40px">滑动条</div>
+		<div class="ui-range" style="margin:0 15px;">
+		     <input type="range" id='block-range' value="50" min="0" max="100" >
+             <div class="mui-tooltip"></div>
+		   </div>
     </div>
 </div>
+<script type="text/javascript" src="../js/zepto.min.js"></script>
+<script type="text/javascript" src="../js/switch.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$(".rui-btn").tap(function(){
+			$(".demo1 .progressbar").toggleClass("pactive");
+			})
+		})
+</script>
+	<script>
+		mui.init({
+				swipeBack:true //启用右滑关闭功能
+			});
+	    //监听input事件，获取range的value值，也可以直接element.value获取该range的值
+	    var rangeList = document.querySelectorAll('input[type="range"]');
+	    for(var i=0,len=rangeList.length;i<len;i++){
+	        rangeList[i].addEventListener('input',function(){
+	            if(this.id.indexOf('field')>=0){
+	                document.getElementById(this.id+'-input').value = this.value;
+	            }else{
+	                document.getElementById(this.id+'-val').innerHTML = this.value;
+	            }
+	            
+	
+	        });
+	    }
+	
+	    document.getElementById('field-range-input').addEventListener('input',function(){
+	        document.getElementById('field-range').value = this.value;
+	    });
+	</script>
 </body>
 </html>

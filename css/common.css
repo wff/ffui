@@ -106,7 +106,7 @@ h6 {
 /*公用样式*/
 .fl{float:left;}
 .fr{float:right;}
-.fls{ position: absolute; z-index: 10;}
+.fls{ position: absolute; z-index: 10; top:0px;}
 .show,.db{display:block;}
 .hide{display:none;}
 .vm{ vertical-align: middle;}
@@ -646,8 +646,8 @@ transition: background-color 0.1s linear;
 	opacity:.6
 }
 .btn-outlined{background-color:transparent;}
-.bg-blue.btn-outlined{ color:#007aff; }
-.bg-blue.btn-outlined:after{border: 1px solid #007aff;}
+.bg-blue.btn-outlined{ color:#0db8f6; }
+.bg-blue.btn-outlined:after{border: 1px solid #0db8f6;}
 .bg-green.btn-outlined{ color:#4cd964; }
 .bg-green.btn-outlined:after{border: 1px solid #4cd964;}
 .bg-white.btn-outlined:after{border: 1px solid #fff;}
@@ -708,8 +708,7 @@ transition: background-color 0.1s linear;
           align-items: center;
          
 }
-.header .flexitem{ text-align: center; font-size: 18px; position: relative;
- }
+.header .flexitem{ text-align: center; font-size: 20px; position: relative; }
 
  .navbar{ position: absolute;
 top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%);
@@ -1879,10 +1878,74 @@ align-items: flex-end;
 	box-sizing: border-box;
 	border-radius: 20px;}
 /*进度条*/
-.progressbar{ background:#e5e5e5; height:5px; border-radius:3px; position:relative; margin: 10px 0;}
-.progressbar span{ width:50%; height:100%;  border-radius:3px; display:block; 
-  background-image:-moz-linear-gradient(left,#00d496,#00c8e2);
-  background-image:-webkit-linear-gradient(left,#00d496,#00c8e2);
-  background-image:-o-linear-gradient(left,#00d496,#00c8e2);
-  background-image:linear-gradient(to right,#00d496,#00c8e2);
-}	
+.progressbar{ background:#e5e5e5; height:5px; border-radius:3px; position:relative; margin: 10px 0; overflow:hidden;
+	-webkit-transform-origin: center top;
+	transform-origin: center top;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d
+}
+.progressbar span{ width:100%; height:100%;  border-radius:3px; display:block; 
+	position:absolute;
+	left:0px;
+	-webkit-transform: translate3d(-100%,0,0);
+	transform: translate3d(-100%,0,0);
+	-webkit-transition: .6s;
+	transition: .6s;
+}
+
+.progressbar.pactive span{
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+.process{ width:52px; padding:0 25px; position:relative; margin:20px auto;}
+.process span.num{display: block;color: #fc8138;font-size: 12px; width:100%;text-align:center;height: 16px;line-height:16px;position: absolute;left:0px;}
+
+/*滑动条*/
+.ui-range input[type=range] {
+	position: relative;
+	width: 100%;
+	height: 4px;
+	margin: 17px 0;
+	padding: 0;
+	cursor: pointer;
+	border: 0;
+	border-radius: 3px;
+	outline: 0;
+	background-color: #e5e5e5;
+	-webkit-appearance: none!important
+}
+
+.ui-range input[type=range]::-webkit-slider-thumb {
+	width: 25px;
+	height: 25px;
+	box-shadow:0 0 4px rgba(0,0,0,0.15);
+	border:2px solid #fff;
+	border-radius: 50%;
+  background-image:-moz-linear-gradient(top,#00d496,#00c8e2);
+  background-image:-webkit-linear-gradient(top,#00d496,#00c8e2);
+  background-image:-o-linear-gradient(top,#00d496,#00c8e2);
+  background-image:linear-gradient(to bottom,#00d496,#00c8e2);
+	background-clip: padding-box;
+	-webkit-appearance: none!important
+}
+
+.ui-range label~input[type=range] {
+	width: 65%
+}
+
+.ui-range .mui-tooltip {
+	font-size: 36px;
+	line-height: 64px;
+	position: absolute;
+	z-index: 1;
+	top: -70px;
+	width: 64px;
+	height: 64px;
+	text-align: center;
+	opacity: .8;
+	color: #333;
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	background-color: #fff;
+	text-shadow: 0 1px 0 #f3f3f3
+}

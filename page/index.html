@@ -10,7 +10,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10" /> 
 <link type="text/css" rel="stylesheet" href="../css/common.css"/>
 </head>
-<body ontouchstart="">
+<body ontouchstart="" ontouchmove="">
     <header class="header">
       <a class="fls icon-back" href="index.html"></a>
       <div class="flexitem">UI组件</div>    
@@ -22,18 +22,18 @@
         <a class="line-item" href="icon.html"><div class="line-item-left">icon常用图标</div></a>
         <a class="line-item" href="button.html"><div class="line-item-left">button按钮</div></a>
         <a class="line-item" href="tips.html"><div class="line-item-left">tips提示信息</div></a>
-        <a class="line-item" href="media.html"><div class="line-item-left">media列表</div></a>
         <a class="line-item" href="form.html"><div class="line-item-left">form表单</div></a>
+        <a class="line-item" href="media.html"><div class="line-item-left">media列表</div></a>    
         <a class="line-item" href="grid.html"><div class="line-item-left">grid九宫格</div></a>
         <a class="line-item" href="filter.html"><div class="line-item-left">filter条件筛选</div></a>
         <a class="line-item" href="dialog.html"><div class="line-item-left">dialog对话框</div></a>
-        <a class="line-item" href="action.html"><div class="line-item-left">actionsheet上拉菜单</div></a>
         <a class="line-item" href="progress.html"><div class="line-item-left">progress进度条</div></a>
+        <a class="line-item" href="action.html"><div class="line-item-left">actionsheet上拉菜单</div></a>
         <a class="line-item" href="header.html"><div class="line-item-left">header头部</div></a>
         <a class="line-item" href="nav.html"><div class="line-item-left">nav导航</div></a>
         <a class="line-item" href="navbar.html"><div class="line-item-left">标签切换</div></a>
         <a class="line-item" href="cardview.html"><div class="line-item-left">card卡片视图</div></a>
-        <a class="line-item" href="swiper.html"><div class="line-item-left">swiper滑动选项</div></a>
+        <a class="line-item" href="switch2.html"><div class="line-item-left">switch开关</div></a>
         <a class="line-item" href="search.html"><div class="line-item-left">search搜索框</div></a>
         <a class="line-item" href="stepper.html"><div class="line-item-left">stepper数字输入</div></a>
          <a class="line-item" href="layout.html"><div class="line-item-left">layoutd布局</div></a>
@@ -48,5 +48,12 @@
    
    </div>
     
+   <script src="../js/zepto.min.js"></script>
+   <script>
+       $(function(){
+           $("body").on("touchstart", "a", function(){})
+       })
+   </script>
+
 </body>
 </html>
