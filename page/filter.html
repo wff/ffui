@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <meta name="format-detection" content="telephone=no">
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10" />
-<link type="text/css" rel="stylesheet" href="../css/commom.css"/>
+<link type="text/css" rel="stylesheet" href="../css/common.css"/>
 <link type="text/css" rel="stylesheet" href="../css/swiper.min.css"/>
 <style type="text/css">
 .dropnavbar .flexitem{ text-align:center; line-height:45px; position:relative;}
@@ -65,11 +65,12 @@
 .dropmenu .line-item:before{ left:0px; }
 .leftdrop.line-cells .line-item:after{content:""; position:absolute; right:0px; width:1px; height:100%; border-right:1px solid #dadbdc; top:0px; -webkit-transform:scaleX(0.5);transform:scaleX(0.5);}
 .dropmenu .flexitem ul{ height:375px; overflow-y:scroll;}
-.leftdrop.line-cells .line-item-on{ background:#fff;}
+.leftdrop.line-cells .line-item-on{ background:#fff; color:#12b7f5;}
 .leftdrop.line-cells .line-item-on.line-item:after{border-right:1px solid #fff;}
 .pop-wrap{ display:none;}
 .itablist{ padding:15px 10px;}
 .itemtab{ font-size:12px; width:23%; text-align:center; box-sizing:border-box; margin:5px 1%; padding:0; color:#666;}
+.rightdrop ul{ display:none;}
 </style>
 </head>
 <body>
@@ -88,21 +89,24 @@
   <div class="flexbox dropmenu">
     <div class="flexitem line-cells leftdrop">
     <ul>
-    	<li class="line-item"><div class="line-item-left">深圳市</div></li>
-        <li class="line-item"><div class="line-item-left">福田区</div></li>
-        <li class="line-item line-item-on"><div class="line-item-left">南山区</div></li>
-        <li class="line-item"><div class="line-item-left">盐田区</div></li>
-        <li class="line-item"><div class="line-item-left">龙岗区</div></li>
+        <li class="line-item"><div class="line-item-left">深圳市</div></li>
+        <li class="line-item line-item-on"><div class="line-item-left">福田区</div></li>
+        <li class="line-item"><div class="line-item-left">南山区</div></li>
         <li class="line-item"><div class="line-item-left">宝安区</div></li>
+        <li class="line-item"><div class="line-item-left">龙岗区</div></li>
+        <li class="line-item"><div class="line-item-left">盐田区</div></li>
         <li class="line-item"><div class="line-item-left">龙华新区</div></li>
         <li class="line-item"><div class="line-item-left">大鹏新区</div></li>
         <li class="line-item"><div class="line-item-left">坪山新区</div></li>
         <li class="line-item"><div class="line-item-left">光明新区</div></li>
-        <li class="line-item"><div class="line-item-left">深圳市</div></li>      
     </ul>
     </div>
-    <div class="flexitem line-cells">
+    <div class="flexitem line-cells rightdrop">
     <ul>
+    	<li class="line-item"><div class="line-item-left">全部</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">深圳市</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    </ul>
+    <ul style="display:block">
     	<li class="line-item"><div class="line-item-left">全部</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
     	<li class="line-item"><div class="line-item-left">香蜜湖</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
     	<li class="line-item"><div class="line-item-left">华强北</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
@@ -121,6 +125,83 @@
     	<li class="line-item"><div class="line-item-left">连城新天地</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
     	<li class="line-item"><div class="line-item-left">东海购物广场</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
     </ul>
+    <ul>
+    	<li class="line-item"><div class="line-item-left">南山中心区</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">海岸城/保利</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">南油</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">世界之窗</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">南山京基百纳</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">华侨城</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">太古城</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">欢乐海岸</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">科技园</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    </ul>
+    <ul>
+    	<li class="line-item"><div class="line-item-left">宝安中心区</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">海雅缤纷城</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">港隆城</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">福永</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">固戍</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">桃源居</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">田寮/长圳</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">塘尾/将石</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">西田</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    </ul>
+    <ul>
+    	<li class="line-item"><div class="line-item-left">布吉</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">龙岗中心城</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">李朗</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">扬美</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">万科广场</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">摩尔城</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">大芬</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">三联</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">大运</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    </ul>
+    <ul>
+    	<li class="line-item"><div class="line-item-left">盐田区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">盐田区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">盐田区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">盐田区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">盐田区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">盐田区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">盐田区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">盐田区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">盐田区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    </ul> 
+    <ul>
+    	<li class="line-item"><div class="line-item-left">龙华新区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">龙华新区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">龙华新区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">龙华新区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">龙华新区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">龙华新区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">龙华新区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">龙华新区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">龙华新区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    </ul>    
+    <ul>
+    	<li class="line-item"><div class="line-item-left">大鹏新区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">大鹏新区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">大鹏新区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">大鹏新区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">大鹏新区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">大鹏新区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">大鹏新区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">大鹏新区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">大鹏新区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    </ul>    
+    <ul>
+    	<li class="line-item"><div class="line-item-left">光明新区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">光明新区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">光明新区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">光明新区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">光明新区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">光明新区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">光明新区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">光明新区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    	<li class="line-item"><div class="line-item-left">光明新区数据</div><div class="line-item-right"><span class="remind-num">99</span></div></li>
+    </ul>    
     </div>
   </div>
   <div class="dropmenu">
@@ -181,6 +262,14 @@ $(function(){
 		ditem.addClass("dmenu-active");
 		$(".pop-wrap").show();
 		})
+		$(".leftdrop .line-item").tap(function(){
+			$(this).addClass("line-item-on").siblings().removeClass("line-item-on");
+			$(".rightdrop ul").eq($(this).index()).show().siblings().hide();
+			})
+		$(".rightdrop .line-item").tap(function(){
+			$(".pop-wrap").hide();
+			$(this).closest("div.dropmenu").removeClass("dmenu-active");
+			})	
 	})
 </script>
  
