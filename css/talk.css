@@ -8,6 +8,7 @@
 .header .flexitem{font-size:20px;}
 .gray-time{ margin:15px 0;}
 .talk-content{ background:#fff;position:relative;  border-radius:5px; padding:10px; display:inline-block; margin-left:8px; margin-right:60px; font-size:16px; color:#333;}
+.notissued:before{color: #f05155; content: "\e621";font-family:"iconfont";font-size:20px; line-height:22px;font-style:normal; display: inline-block; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; vertical-align:middle;  position:absolute; right:-28px;}
 .talklist .flexitem{ position:relative;}
 .talklist li{ margin:15px 0;}
 .talklist li.visitor .flexitem:before {  

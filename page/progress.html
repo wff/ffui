@@ -47,6 +47,7 @@
   width: 100%;
   -webkit-animation:dgreen .6s linear;animation:dgreen .6s linear;
 }
+p{ color:#888;}
 </style>
 </head>
 <body ontouchstart="">
@@ -72,15 +73,19 @@
             <div class="progressbar"><span class="dgreen dcolor"></span></div>
             <div class="progress-shadow"></div>
         </div>
-        <div class="line-cell-title" style="line-height:30px; margin-top:40px">滑动条</div>
-		<div class="ui-range" style="margin:0 15px;">
-		     <input type="range" id='block-range' value="50" min="0" max="100" >
-             <div class="mui-tooltip"></div>
-		   </div>
+        <div class="pd">
+            <p style="padding-bottom:60px; padding-top:10px;">带有提示的滑块：<span id="value-1">30</span></p>
+            <div class="ui-range">
+                <input type="range" class="ui-range-danger" value="30" max="100" min="1" step="1" id="range" />
+            </div>
+            <p>普通滑块：<span id="value">50</span></p>
+            <div class="ui-range"><input type="range" value="50" max="100" min="1" class="ui-range-primary" id="demo" /></div>
+		 </div>
+           </div>
     </div>
 </div>
 <script type="text/javascript" src="../js/zepto.min.js"></script>
-<script type="text/javascript" src="../js/switch.js"></script>
+<script type="text/javascript" src="../js/range.js"></script>
 <script type="text/javascript">
 	$(function(){
 		$(".rui-btn").tap(function(){
@@ -88,27 +93,16 @@
 			})
 		})
 </script>
-	<script>
-		mui.init({
-				swipeBack:true //启用右滑关闭功能
-			});
-	    //监听input事件，获取range的value值，也可以直接element.value获取该range的值
-	    var rangeList = document.querySelectorAll('input[type="range"]');
-	    for(var i=0,len=rangeList.length;i<len;i++){
-	        rangeList[i].addEventListener('input',function(){
-	            if(this.id.indexOf('field')>=0){
-	                document.getElementById(this.id+'-input').value = this.value;
-	            }else{
-	                document.getElementById(this.id+'-val').innerHTML = this.value;
-	            }
-	            
-	
-	        });
-	    }
-	
-	    document.getElementById('field-range-input').addEventListener('input',function(){
-	        document.getElementById('field-range').value = this.value;
-	    });
-	</script>
+<script type="text/javascript">
+var range = new auiRange({
+    element:document.getElementById("range")
+},function(ret){
+    document.getElementById("value-1").textContent = ret.value;
+})
+document.getElementById("demo").addEventListener("change",function(){
+    document.getElementById("value").textContent = this.value;
+});
+
+</script>
 </body>
 </html>
