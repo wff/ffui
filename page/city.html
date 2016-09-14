@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>省市区选择</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10" /> 
+<link type="text/css" rel="stylesheet" href="../css/common.css"/>
+<style type="text/css">
+.line-item{ padding:15px;}
+</style>
+</head>
+<body ontouchstart="" ontouchmove="">
+    <header class="header">
+      <a class="fls icon-back" href="index.html"></a>
+      <div class="flexitem">省市区选择</div>    
+    </header>
+<div class="container">
+   	<ul class="line-cells line-cells-access">
+    	<li class="line-item"><div class="line-item-left" id="city-picker">选择省市区</div></li>
+    </ul>
+   </div>
+    
+   <script src="../js/zepto.min.js"></script>
+   <script src="../js/city.picker.min.js"></script>
+   <script>
+       $(function(){
+           $("body").on("touchstart", "a", function(){})
+       })
+   </script>
+
+</body>
+</html>

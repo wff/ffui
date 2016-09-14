@@ -943,14 +943,14 @@ padding: 0px 5px; font-size: 14px; box-sizing: border-box; border: 0;
 .toast {
   position: fixed;
   z-index: 50000;
-  width: 7.6em;
-  min-height: 7.6em;
-  top: 150px;
+  top: 50%;
   left: 50%;
-  margin-left: -3.8em;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
   background: rgba(40, 40, 40, 0.75);
   text-align: center;
   border-radius: 5px;
+  padding:0 20px;
   color: #fff;
 
 }
@@ -983,7 +983,7 @@ padding: 0px 5px; font-size: 14px; box-sizing: border-box; border: 0;
   opacity: 0.25;
 }
 .tloading-con{  margin-top: 64%;
-  font-size: 14px;}
+  font-size: 14px; padding-bottom:15px;}
 .tloading-leaf:before {
   content: " ";
   position: absolute;
@@ -1976,7 +1976,7 @@ align-items: flex-end;
     width: 1.2rem;
     height: 1.2rem;
     background-color: #ffffff;
-    border: solid 1px #dddddd;
+    border: solid 1px #5D656B;
     -webkit-border-radius: 0.6rem;
     border-radius: 0.6rem;
     font-size: 0.8rem;
@@ -2106,6 +2106,20 @@ align-items: flex-end;
 .ui-switch:checked:before {
     left: 22px;
 }
+.rui-radio{
+	display: inline-block;
+	width: 28px;
+	height: 26px;
+	border: 0;
+	outline: 0!important;
+	vertical-align:middle;
+	background-color: transparent;
+	-webkit-appearance: none	
+	}
+.rui-radio:before{
+	 font-family:"iconfont";font-size:22px; line-height:22px;font-style:normal; color:#5D656B; display: inline-block; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; vertical-align:middle;
+	  content: "\e65b"; display:inline-block;
+	}
 /*点击图片放大*/
 .gallery{ overflow:hidden; margin-left:-5px; margin-top:-5px; padding-bottom:5px;}
 .gallery li{ width:33.3%; float:left; position:relative; padding:5px; box-sizing:border-box;}
